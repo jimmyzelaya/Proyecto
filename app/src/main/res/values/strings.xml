@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Supermercado El Económico</string>
+    <string name="logo_de_la_aplicacion" translatable="false">Logo de la aplicación</string>
+    <string name="iniciar_sesion" translatable="false">Iniciar sesión</string>
+    <string name="correo_electronico" translatable="false">Correo electrónico:</string>
+    <string name="passwd" translatable="false">Contraseña</string>
+    <string name="no_tienes_cuenta" translatable="false">No tienes cuenta?</string>
+    <string name="registrate_aqui" translatable="false">Regístrate Aquí</string>
+    <string name="imagen_logo_grupo" translatable="false">Imagen logo grupo</string>
+    <string name="grupo_5" translatable="false">TEAM FIVE</string>
+    <string name="registro" translatable="false">Registro</string>
+    <string name="no_identidad" translatable="false">No. identidad:</string>
+    <string name="apellido" translatable="false">Apellido:</string>
+    <string name="nombre" translatable="false">Nombre:</string>
+    <string name="registrarse" translatable="false">Registrarse</string>
+    <string name="ya_tienes_cuenta" translatable="false">Ya tienes cuenta?</string>
+    <string name="inicia_sesion_aqui" translatable="false">Inicia sesión aquí</string>
+    <string name="title_activity_dashboard_admin">ActivityDashboardAdmin</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+</resources>
