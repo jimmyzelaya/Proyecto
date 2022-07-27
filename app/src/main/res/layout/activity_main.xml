@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo0"
     tools:context=".MainActivity">
 
     <ImageView
@@ -14,28 +15,13 @@
         android:layout_marginTop="150dp"
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="200dp"
+        android:contentDescription="@string/imagen_logo_grupo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logo_equipo_5"
-        android:contentDescription="@string/imagen_logo_grupo" />
+        app:srcCompat="@drawable/logo_blanco" />
 
-    <TextView
-        android:id="@+id/textViewGrupo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="@string/grupo_5"
-        android:textColor="@color/app_init"
-        android:textSize="45sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.712" />
 </androidx.constraintlayout.widget.ConstraintLayout>
