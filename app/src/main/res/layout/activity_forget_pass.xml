@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityForgetPass"
+    android:orientation="vertical"
+    android:background="@drawable/fondo_blanco">
+
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_margin="0dp"
+        android:orientation="horizontal"
+        android:background="@drawable/fondo0"
+        android:padding="10dp">
+
+
+        <ImageView
+            android:id="@+id/imgvSalir"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/ic_action_name"
+            android:gravity="center"
+            android:onClick="onClickRegresar"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/dash"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/imgvSalir"
+            android:gravity="center"
+            android:text="El Económico"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="normal" />
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/modal"
+        android:background="@color/white"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="400dp"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Restablecer contraseña"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/txtcorreo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/txtcorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="@color/cardview_shadow_start_color"
+            android:ems="10"
+            android:fontFamily="sans-serif"
+            android:hint="Correo electrónico"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnEnviar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnEnviar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="#40A72E"
+            android:text="ENVIAR"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtcorreo" />
+    </LinearLayout>
+
+</LinearLayout>
