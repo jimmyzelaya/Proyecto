@@ -12,7 +12,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:background="@drawable/fondo0"
         android:padding="10dp">
 
@@ -23,14 +23,6 @@
             android:layout_height="match_parent"
             android:background="@drawable/ic_action_name"
             android:gravity="center" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/el_econ_mico"
-            android:textSize="25sp"
-            android:textColor="#FFFFFF"
-            android:gravity="center"/>
 
 
     </LinearLayout>
@@ -45,14 +37,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:alignmentMode="alignMargins"
-            android:columnCount="2"
+            android:columnCount="1"
             android:columnOrderPreserved="false"
             android:rowCount="4">
 
-
             <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="200dp"
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
@@ -65,8 +56,7 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/fondo_blanco"
                     android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="100dp"
@@ -81,7 +71,7 @@
                         android:text="Tienda"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="18dp"
+                        android:textSize="18sp"
                         android:textStyle="normal" />
 
 
@@ -90,8 +80,8 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="200dp"
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
@@ -104,9 +94,7 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/fondo_blanco"
                     android:gravity="center"
-                    android:onClick="onClickPerfil"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="100dp"
@@ -121,7 +109,7 @@
                         android:text="Mi Perfil"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="18dp"
+                        android:textSize="18sp"
                         android:textStyle="normal" />
 
 
@@ -130,8 +118,8 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="200dp"
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
@@ -144,8 +132,7 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/fondo_blanco"
                     android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="100dp"
@@ -160,7 +147,7 @@
                         android:text="Pedidos"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="18dp"
+                        android:textSize="18sp"
                         android:textStyle="normal" />
 
 
@@ -169,8 +156,8 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="200dp"
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
@@ -183,8 +170,7 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/fondo_blanco"
                     android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="100dp"
@@ -196,88 +182,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
-                        android:text="Ubicación"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="18dp"
-                        android:textStyle="normal" />
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="200dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="5dp">
-
-                <LinearLayout
-                    android:id="@+id/btnPerfilCliente"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/fondo_blanco"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        app:srcCompat="@drawable/camion_de_reparto" />
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
                         android:text="Información"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="18dp"
-                        android:textStyle="normal" />
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="200dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="5dp">
-
-                <LinearLayout
-                    android:id="@+id/btnAcercaD"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/fondo_blanco"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        app:srcCompat="@drawable/ajuste" />
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="Ajustes"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="18dp"
+                        android:textSize="18sp"
                         android:textStyle="normal" />
 
 
