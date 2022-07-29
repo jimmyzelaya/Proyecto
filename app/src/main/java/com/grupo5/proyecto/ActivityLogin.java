@@ -8,12 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ActivityLogin extends AppCompatActivity {
     EditText correo, clave;
     TextView registro, forgetpass;
     Button iniciarSesion;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,4 +50,5 @@ public class ActivityLogin extends AppCompatActivity {
         forgetpass = findViewById(R.id.txtforget);
         iniciarSesion = findViewById(R.id.btnLIniciar);
     }
+
 }
