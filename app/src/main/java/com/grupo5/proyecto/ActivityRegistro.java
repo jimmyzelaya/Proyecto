@@ -5,10 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ActivityRegistro extends AppCompatActivity {
-    TextView login;
+    ImageView login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,6 @@ public class ActivityRegistro extends AppCompatActivity {
     }
 
     private void init(){
-        login = findViewById(R.id.txtRLogin);
+        login = findViewById(R.id.imgvSalir);
     }
 }

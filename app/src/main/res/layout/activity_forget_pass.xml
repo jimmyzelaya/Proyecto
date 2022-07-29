@@ -9,7 +9,7 @@
     android:background="@drawable/fondo_blanco">
 
 
-    <RelativeLayout
+    <LinearLayout
 
         android:layout_width="match_parent"
         android:layout_height="65dp"
@@ -34,15 +34,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/imgvSalir"
             android:gravity="center"
-            android:text="El Económico"
+            android:text="@string/el_econ_mico"
             android:textColor="@color/white"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textStyle="normal" />
 
 
-    </RelativeLayout>
+    </LinearLayout>
 
 
     <LinearLayout
@@ -92,6 +91,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
+            android:textColor="#000000"
             tools:ignore="MissingConstraints" />
 
         <Button

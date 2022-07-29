@@ -20,11 +20,6 @@
             android:name=".ActivityForgetPass"
             android:exported="false" />
         <activity
-            android:name=".ActivityDashboardAdmin"
-            android:exported="false"
-            android:label="@string/title_activity_dashboard_admin"
-            android:theme="@style/Theme.Proyecto.NoActionBar" />
-        <activity
             android:name=".ActivityRegistro"
             android:exported="false" />
         <activity
