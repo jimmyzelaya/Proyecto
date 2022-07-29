@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">El Económico</string>
+    <string name="imagen_logo_grupo" translatable="false" />
+    <string name="el_econ_mico" translatable="false">El Económico</string>
+    <!--Login y Registrarse-->
     <string name="registro" translatable="false">Registro</string>
     <string name="nombre" translatable="false">Nombre:</string>
     <string name="apellido" translatable="false">Apellido:</string>
-    <string name="correo_electronico" translatable="false">Correo:</string>
+    <string name="correo_electronico" translatable="false">Correo Electrónico:</string>
     <string name="passwd" translatable="false">Contraseña:</string>
     <string name="telefono" translatable="false">Teléfono:</string>
     <string name="direccion" translatable="false">Dirección:</string>
@@ -11,8 +14,7 @@
     <string name="Bienvenido" translatable="false">BIENVENIDO</string>
     <string name="iniciar_sesion" translatable="false">Iniciar Sesión</string>
     <string name="no_tienes_cuenta" translatable="false">¿No tienes cuenta?</string>
-    <string name="el_econ_mico" translatable="false">El Económico</string>
-    <string name="imagen_logo_grupo" translatable="false" />
-
+    <string name="forgetpass" translatable="false">Recuperar contraseña</string>
+    <!---->
 
 </resources>
