@@ -15,6 +15,7 @@
     <string name="iniciar_sesion" translatable="false">Iniciar Sesión</string>
     <string name="no_tienes_cuenta" translatable="false">¿No tienes cuenta?</string>
     <string name="forgetpass" translatable="false">Recuperar contraseña</string>
+    <string name="perfil_admin">Perfil</string>
     <!---->
 
 </resources>
