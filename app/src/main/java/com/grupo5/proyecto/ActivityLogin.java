@@ -28,11 +28,10 @@ public class ActivityLogin extends AppCompatActivity {
     private void onClickForget(View view) {
         Intent forgetpassword = new Intent(getApplicationContext(),ActivityForgetPass.class);
         startActivity(forgetpassword);
-        finish();
     }
 
     private void onClickLogin(View view) {
-        Intent login = new Intent(getApplicationContext(), ActivityDashboardCliente.class);
+        Intent login = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
         startActivity(login);
         finish();
     }
@@ -40,7 +39,6 @@ public class ActivityLogin extends AppCompatActivity {
     private void onClickRegis(View view) {
         Intent regis = new Intent(getApplicationContext(), ActivityRegistro.class);
         startActivity(regis);
-        finish();
     }
 
     private void init(){

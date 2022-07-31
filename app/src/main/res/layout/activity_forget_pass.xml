@@ -36,7 +36,7 @@
             android:layout_marginStart="10dp"
             android:gravity="center"
             android:fontFamily="sans-serif-light"
-            android:text="@string/el_econ_mico"
+            android:text="Restablecer Contraseña"
             android:textColor="@color/white"
             android:textSize="25sp"
             android:textStyle="normal" />
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="sans-serif-light"
-            android:text="Restablecer contraseña"
+            android:text="Ingrese su correo electrónico para verificar"
             android:textColor="@color/black"
             android:textSize="18sp"
             tools:ignore="MissingConstraints" />

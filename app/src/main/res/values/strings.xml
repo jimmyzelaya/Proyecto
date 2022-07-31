@@ -14,7 +14,7 @@
     <string name="Bienvenido" translatable="false">BIENVENIDO</string>
     <string name="iniciar_sesion" translatable="false">Iniciar Sesión</string>
     <string name="no_tienes_cuenta" translatable="false">¿No tienes cuenta?</string>
-    <string name="forgetpass" translatable="false">Recuperar contraseña</string>
+    <string name="forgetpass" translatable="false">Restablecer contraseña</string>
     <!--Administrador-->
     <string name="perfil_admin" translatable="false">Perfil</string>
 

@@ -26,10 +26,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init(){
-
         imageLogo = findViewById(R.id.imageViewLogo);
         animation1 = AnimationUtils.loadAnimation(this, R.anim.scroll_up);
-
     }
 
     private void run() {

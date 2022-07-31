@@ -19,7 +19,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
+            android:fontFamily="sans-serif"
             android:text="Login"
             android:textColor="@color/app_init"
             android:textSize="30sp"
@@ -38,10 +38,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:fontFamily="sans-serif-light"
+            android:fontFamily="arial"
             android:text="@string/correo_electronico"
             android:textColor="#000000"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="normal" />
 
         <EditText
@@ -51,12 +51,12 @@
             android:layout_marginTop="5dp"
             android:backgroundTint="@color/app_init"
             android:ems="10"
-            android:fontFamily="sans-serif-light"
+            android:fontFamily="arial"
             android:importantForAutofill="no"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
             android:textColor="#000000"
-            android:textSize="16sp"
+            android:textSize="14sp"
             tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
         <TextView
@@ -64,10 +64,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif-light"
+            android:fontFamily="arial"
             android:text="@string/passwd"
             android:textColor="#000000"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="normal" />
 
 
@@ -78,26 +78,26 @@
             android:layout_marginTop="5dp"
             android:backgroundTint="@color/app_init"
             android:ems="10"
-            android:fontFamily="sans-serif-light"
+            android:fontFamily="arial"
             android:importantForAutofill="no"
             android:inputType="textPassword"
             android:minHeight="48dp"
             android:password="true"
             android:textColor="#000000"
-            android:textSize="16sp"
+            android:textSize="14sp"
             tools:ignore="Deprecated,LabelFor,SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/txtforget"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:fontFamily="sans-serif-light"
+            android:fontFamily="arial"
             android:singleLine="false"
             android:text="@string/forgetpass"
             android:textAllCaps="false"
             android:textColor="#40A72E"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="normal" />
 
         <Button
@@ -106,10 +106,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/button_rounded"
-            android:fontFamily="sans-serif-light"
+            android:fontFamily="arial"
             android:text="@string/iniciar_sesion"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="14sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -122,10 +122,10 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-light"
+                android:fontFamily="arial"
                 android:text="@string/no_tienes_cuenta"
                 android:textColor="#000000"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="normal" />
 
             <TextView
@@ -133,12 +133,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:fontFamily="sans-serif-light"
+                android:fontFamily="arial"
                 android:singleLine="false"
                 android:text="@string/registrarse"
                 android:textAllCaps="false"
                 android:textColor="#40A72E"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
         </LinearLayout>
 
