@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="#F8F8F8"
     tools:context=".ActivityRegistro">
 
     <LinearLayout
@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:fontFamily="sans-serif-light"
+            android:fontFamily="arial"
             android:gravity="center"
             android:text="@string/registro"
             android:textColor="#FFFFFF"
@@ -69,120 +69,139 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:fontFamily="sans-serif-light"
+                android:fontFamily="arial"
                 android:text="@string/nombre"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/txtnombre"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="5dp"
-                android:backgroundTint="@color/cardview_shadow_start_color"
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
                 android:ems="10"
-                android:fontFamily="sans-serif-light"
+                android:fontFamily="arial"
                 android:importantForAutofill="no"
+                android:paddingStart="10dp"
                 android:textColor="#000000"
+                android:textCursorDrawable="@color/app_init"
+                android:textSize="14sp"
                 tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:fontFamily="sans-serif-light"
+                android:fontFamily="arial"
                 android:text="@string/apellido"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/txtapeliido"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="5dp"
-                android:backgroundTint="@color/cardview_shadow_start_color"
-                android:fontFamily="sans-serif-light"
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
+                android:fontFamily="arial"
+                android:paddingStart="10dp"
                 android:textColor="#000000"
+                android:textSize="14sp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:fontFamily="sans-serif-light"
+                android:fontFamily="arial"
                 android:text="@string/correo_electronico"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/txtcorreo"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="5dp"
-                android:backgroundTint="@color/cardview_shadow_start_color"
-                android:fontFamily="sans-serif-light"
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
+                android:fontFamily="arial"
                 android:inputType="textEmailAddress"
+                android:paddingStart="10dp"
                 android:textColor="#000000"
+                android:textSize="14sp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:fontFamily="sans-serif-light"
+                android:fontFamily="arial"
                 android:text="@string/passwd"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/txtpass"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="5dp"
-                android:backgroundTint="@color/cardview_shadow_start_color"
-                android:fontFamily="sans-serif-light"
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
+                android:fontFamily="arial"
                 android:inputType="textPassword"
+                android:paddingStart="10dp"
                 android:textColor="#000000"
+                android:textSize="14sp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:fontFamily="sans-serif-light"
+                android:fontFamily="arial"
                 android:text="@string/telefono"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/editTextPhone"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="5dp"
-                android:backgroundTint="@color/cardview_shadow_start_color"
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
                 android:ems="10"
-                android:fontFamily="sans-serif-light"
+                android:fontFamily="arial"
                 android:inputType="phone"
+                android:paddingStart="10dp"
                 android:textColor="#000000"
+                android:textSize="14sp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:fontFamily="sans-serif-light"
+                android:fontFamily="arial"
                 android:text="@string/direccion"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/txtdireccion"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="5dp"
-                android:backgroundTint="@color/cardview_shadow_start_color"
-                android:fontFamily="sans-serif-light"
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
+                android:fontFamily="arial"
+                android:paddingStart="10dp"
                 android:textColor="#000000"
+                android:textSize="14sp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <Button
@@ -192,10 +211,10 @@
                 android:layout_marginTop="15dp"
                 android:background="@drawable/button_rounded"
                 android:backgroundTint="#40A72E"
-                android:fontFamily="sans-serif"
+                android:fontFamily="arial"
                 android:text="@string/registrarse"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
