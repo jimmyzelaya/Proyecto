@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/teal_200"
     android:orientation="vertical"
-    tools:context=".ActivityDashboardCliente">
+    tools:context=".ActivityDashboardAdmin">
 
     <LinearLayout
 
@@ -74,9 +74,8 @@
                 android:gravity="center"
                 android:text="¡Bienvenido a la App!"
                 android:textColor="@color/black"
-                android:textStyle="bold"
                 android:textSize="25dp"
-                />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -106,8 +105,7 @@
 
     </ScrollView>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+
+
 
 </LinearLayout>
