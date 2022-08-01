@@ -17,5 +17,6 @@
     <string name="forgetpass" translatable="false">Restablecer contraseña</string>
     <!--Administrador-->
     <string name="perfil_admin" translatable="false">Perfil</string>
+    <string name="login">Login</string>
 
 </resources>

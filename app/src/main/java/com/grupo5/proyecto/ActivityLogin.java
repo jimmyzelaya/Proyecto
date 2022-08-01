@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
@@ -20,11 +19,9 @@ import com.grupo5.proyecto.Configurations.ApiConfigurations.ApiConfigurations;
 import com.grupo5.proyecto.Configurations.SQLiteConnection.SQLiteConnections;
 import com.grupo5.proyecto.Configurations.SQLiteConnection.Transactions;
 import com.grupo5.proyecto.Utilities.Utilities;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -71,12 +68,15 @@ public class ActivityLogin extends AppCompatActivity {
                     response -> {
                         if (response.length() > 0) {
                             try {
-                                JSONArray songsArray = response.toJSONArray(response.names());
-                                if (saveNewCredentials(songsArray.getInt(1), songsArray.getString(2), 1)){
-                                    Intent dashboard = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
-                                    startActivity(dashboard);
-                                    finish();
-                                }
+                                JSONArray resp = response.toJSONArray(response.names());
+                                if (resp.length() > 1){
+                                    if (saveNewCredentials(resp.getInt(1), resp.getString(2))){
+                                        Utilities.message("Inicio de sesión exitoso", getApplicationContext());
+                                        Intent dashboard = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
+                                        startActivity(dashboard);
+                                        finish();
+                                    }
+                                } else Utilities.message(resp.getString(0), getApplicationContext());
                             } catch (JSONException e) {
                                 Utilities.message(e.getMessage(), getApplicationContext());
                             }
@@ -119,12 +119,15 @@ public class ActivityLogin extends AppCompatActivity {
                     response -> {
                         if (response.length() > 0) {
                             try {
-                                JSONArray songsArray = response.toJSONArray(response.names());
-                                if (saveNewCredentials(songsArray.getInt(1), songsArray.getString(2), 2)){
-                                    Intent dashboard = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
-                                    startActivity(dashboard);
-                                    finish();
-                                }
+                                JSONArray resp = response.toJSONArray(response.names());
+                                if (resp.length() > 1){
+                                    if (saveNewCredentials(resp.getInt(1), resp.getString(2))){
+                                        Utilities.message("Inicio de sesión exitoso", getApplicationContext());
+                                        Intent dashboard = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
+                                        startActivity(dashboard);
+                                        finish();
+                                    }
+                                } else Utilities.message(resp.getString(0), getApplicationContext());
                             } catch (JSONException e) {
                                 Utilities.message(e.getMessage(), getApplicationContext());
                             }
@@ -136,22 +139,21 @@ public class ActivityLogin extends AppCompatActivity {
         }
     }
 
-    private boolean saveNewCredentials(int uid, String newToken, int op){
+    private boolean saveNewCredentials(int uid, String newToken){
         try {
             connections = new SQLiteConnections(getApplicationContext(), Transactions.NameDatabase, null, 1);
             SQLiteDatabase db = connections.getWritableDatabase();
-            if (op == 1) {
-                ContentValues value = new ContentValues();
+            ContentValues value = new ContentValues();
+            Cursor cursor = db.rawQuery(Transactions.consultCredentials, null);
+            if (cursor.getCount() > 0){
+                value.put("token", newToken);
+                db.execSQL("UPDATE " + Transactions.tableCredentials + " SET token = '" + newToken + "' WHERE " + Transactions.uid + " = '" + uid + "'");
+                return true;
+            } else {
                 value.put("uid", uid);
                 value.put("token", newToken);
                 Long result = db.insert(Transactions.tableCredentials, Transactions.uid, value);
                 return result > 0;
-            } else {
-                ContentValues value = new ContentValues();
-                value.put("token", newToken);
-
-                db.update(Transactions.tableCredentials, value, Transactions.uid + " = " + uid, null);
-                return true;
             }
         } catch (Exception ex) {
             Utilities.message(ex.getMessage(), getApplicationContext());
