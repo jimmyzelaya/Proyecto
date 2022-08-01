@@ -31,7 +31,7 @@
             android:gravity="center"
             android:text="@string/registro"
             android:textColor="#FFFFFF"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
 
 
     </LinearLayout>
@@ -80,6 +80,7 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
+                android:elevation="1dp"
                 android:ems="10"
                 android:fontFamily="arial"
                 android:inputType="text"
@@ -104,6 +105,7 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
+                android:elevation="1dp"
                 android:fontFamily="arial"
                 android:inputType="text"
                 android:paddingStart="10dp"
@@ -130,6 +132,7 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
+                android:elevation="1dp"
                 android:fontFamily="arial"
                 android:inputType="textEmailAddress"
                 android:paddingStart="10dp"
@@ -152,6 +155,7 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
+                android:elevation="1dp"
                 android:fontFamily="arial"
                 android:inputType="textPassword"
                 android:paddingStart="10dp"
@@ -174,6 +178,7 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
+                android:elevation="1dp"
                 android:ems="10"
                 android:fontFamily="arial"
                 android:inputType="phone"
@@ -197,6 +202,7 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
+                android:elevation="1dp"
                 android:fontFamily="arial"
                 android:inputType="text"
                 android:paddingStart="10dp"

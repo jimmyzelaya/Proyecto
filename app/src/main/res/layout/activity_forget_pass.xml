@@ -33,12 +33,11 @@
             android:id="@+id/dash"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
+            android:fontFamily="arial"
             android:gravity="center"
-            android:fontFamily="sans-serif-light"
             android:text="Restablecer Contraseña"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="normal" />
 
 
@@ -63,11 +62,12 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="sans-serif-light"
+            android:layout_marginTop="16dp"
+            android:fontFamily="arial"
             android:text="Ingrese su correo electrónico para verificar"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="14sp"
+            tools:fontFamily="arial"
             tools:ignore="MissingConstraints" />
 
         <EditText
@@ -83,8 +83,12 @@
             android:hint="@string/correo_electronico"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
-            android:textColor="#000000"
-            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/cardview_dark_background"
+            android:textColorLink="@color/app_init"
+            android:textSize="14sp"
+            android:visibility="visible"
+            tools:fontFamily="arial"
             tools:ignore="MissingConstraints" />
 
         <Button
@@ -96,10 +100,10 @@
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/button_rounded"
-            android:fontFamily="sans-serif-light"
-            android:text="ENVIAR"
+            android:fontFamily="arial"
+            android:text="Enviar"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
