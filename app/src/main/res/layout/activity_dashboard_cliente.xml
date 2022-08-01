@@ -51,7 +51,7 @@
                 app:cardElevation="5dp">
 
                 <LinearLayout
-                    android:id="@+id/btnCategoria"
+                    android:id="@+id/btnTienda"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/fondo_blanco"
@@ -127,7 +127,7 @@
                 app:cardElevation="5dp">
 
                 <LinearLayout
-                    android:id="@+id/btnVerCarrito"
+                    android:id="@+id/btnPedidos"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/fondo_blanco"
@@ -165,7 +165,7 @@
                 app:cardElevation="5dp">
 
                 <LinearLayout
-                    android:id="@+id/btnDashb"
+                    android:id="@+id/btnInfo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/fondo_blanco"
