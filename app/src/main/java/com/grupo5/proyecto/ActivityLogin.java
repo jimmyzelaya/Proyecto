@@ -2,38 +2,90 @@ package com.grupo5.proyecto;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.grupo5.proyecto.Configurations.ApiConfigurations.ApiConfigurations;
+import com.grupo5.proyecto.Configurations.SQLiteConnection.SQLiteConnections;
+import com.grupo5.proyecto.Configurations.SQLiteConnection.Transactions;
+import com.grupo5.proyecto.Utilities.Utilities;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ActivityLogin extends AppCompatActivity {
     EditText correo, clave;
     TextView registro, forgetpass;
     Button iniciarSesion;
+    SQLiteConnections connections;
+    RequestQueue queue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         init();
-        registro.setOnClickListener(this::onClickRegis);
         iniciarSesion.setOnClickListener(this::onClickLogin);
+        registro.setOnClickListener(this::onClickRegis);
         forgetpass.setOnClickListener(this::onClickForget);
     }
 
     private void onClickForget(View view) {
-        Intent forgetpassword = new Intent(getApplicationContext(),ActivityForgetPass.class);
-        startActivity(forgetpassword);
+        Intent forgotPassword = new Intent(getApplicationContext(),ActivityForgetPass.class);
+        startActivity(forgotPassword);
     }
 
     private void onClickLogin(View view) {
-        Intent login = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
-        startActivity(login);
-        finish();
+        if (Utilities.emptyFields(correo)){
+            if (Utilities.emptyFields(clave)){
+                login();
+            } else Utilities.message("Debe ingresar su contraseña", getApplicationContext());
+        } else Utilities.message("Debe ingresar su correo", getApplicationContext());
+    }
+
+    private void login() {
+        try {
+            queue = Volley.newRequestQueue(this);
+            HashMap<String, String> parameters = new HashMap<>();
+            parameters.put("email", correo.getText().toString());
+            parameters.put("password", clave.getText().toString());
+
+            JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.POST,
+                    ApiConfigurations.loginEndpoint,
+                    new JSONObject(parameters),
+                    response -> {
+                        if (response.length() > 0) {
+                            try {
+                                JSONArray songsArray = response.toJSONArray(response.names());
+                                if (saveNewCredentials(songsArray.getInt(1), songsArray.getString(2), 1)){
+                                    Intent dashboard = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
+                                    startActivity(dashboard);
+                                    finish();
+                                }
+                            } catch (JSONException e) {
+                                Utilities.message(e.getMessage(), getApplicationContext());
+                            }
+                        }
+                    }, error -> Utilities.message(error.getMessage(), getApplicationContext()));
+            queue.add(jsonRequest);
+        } catch (Exception ex) {
+            Utilities.message(ex.getMessage(), getApplicationContext());
+        }
     }
 
     private void onClickRegis(View view) {
@@ -47,6 +99,81 @@ public class ActivityLogin extends AppCompatActivity {
         registro = findViewById(R.id.txtLRegistro);
         forgetpass = findViewById(R.id.txtforget);
         iniciarSesion = findViewById(R.id.btnLIniciar);
+
+        if (checkIfExistsTokens() != "no"){
+            loginWithToken(checkIfExistsTokens());
+        }
     }
 
+    private void loginWithToken(String credentials){
+        try {
+            String data[] = credentials.split("-");
+            queue = Volley.newRequestQueue(this);
+            Map<String, String> parameters = new HashMap<>();
+            parameters.put("uid",data[0]);
+            parameters.put("token", data[1]);
+
+            JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.POST,
+                    ApiConfigurations.loginWithTokenEndpoint,
+                    new JSONObject(parameters),
+                    response -> {
+                        if (response.length() > 0) {
+                            try {
+                                JSONArray songsArray = response.toJSONArray(response.names());
+                                if (saveNewCredentials(songsArray.getInt(1), songsArray.getString(2), 2)){
+                                    Intent dashboard = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
+                                    startActivity(dashboard);
+                                    finish();
+                                }
+                            } catch (JSONException e) {
+                                Utilities.message(e.getMessage(), getApplicationContext());
+                            }
+                        }
+                    }, error -> Utilities.message(error.getMessage(), getApplicationContext()));
+            queue.add(jsonRequest);
+        } catch (Exception ex) {
+            Utilities.message(ex.getMessage(), getApplicationContext());
+        }
+    }
+
+    private boolean saveNewCredentials(int uid, String newToken, int op){
+        try {
+            connections = new SQLiteConnections(getApplicationContext(), Transactions.NameDatabase, null, 1);
+            SQLiteDatabase db = connections.getWritableDatabase();
+            if (op == 1) {
+                ContentValues value = new ContentValues();
+                value.put("uid", uid);
+                value.put("token", newToken);
+                Long result = db.insert(Transactions.tableCredentials, Transactions.uid, value);
+                return result > 0;
+            } else {
+                ContentValues value = new ContentValues();
+                value.put("token", newToken);
+
+                db.update(Transactions.tableCredentials, value, Transactions.uid + " = " + uid, null);
+                return true;
+            }
+        } catch (Exception ex) {
+            Utilities.message(ex.getMessage(), getApplicationContext());
+        }
+        return false;
+    }
+
+    private String checkIfExistsTokens(){
+        String response = "no";
+        try {
+            connections = new SQLiteConnections(getApplicationContext(), Transactions.NameDatabase, null, 1);
+            SQLiteDatabase db = connections.getWritableDatabase();
+            Cursor cursor = db.rawQuery(Transactions.consultCredentials, null);
+            if (cursor != null) {
+                if (cursor.getCount() > 0) {
+                    cursor.moveToFirst();
+                    response = cursor.getInt(0) + "-" + cursor.getString(1);
+                }
+            }
+        }catch (Exception ex) {
+            Utilities.message(ex.getMessage(), getApplicationContext());
+        }
+        return response;
+    }
 }
