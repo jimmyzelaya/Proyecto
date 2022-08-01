@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/teal_200"
     android:orientation="vertical"
-    tools:context=".ActivityDashboardCliente">
+    tools:context=".ActivityDashboardAdmin">
 
     <LinearLayout
 
@@ -35,21 +35,25 @@
         <EditText
             android:id="@+id/editTextTextPersonName"
             android:layout_width="wrap_content"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
             android:layout_weight="1"
             android:background="@color/white"
             android:backgroundTint="@color/white"
+            android:elevation="5dp"
             android:ems="10"
             android:fontFamily="arial"
             android:hint="¿Qué estas buscando?"
             android:inputType="textPersonName"
-            android:paddingStart="15dp"
+            android:padding="10dp"
             android:textColor="@color/black"
             android:textColorHighlight="@color/black"
             android:textColorHint="@color/black"
             android:textColorLink="@color/black"
             android:textCursorDrawable="@color/app_init"
-            android:textSize="14dp" />
+            android:textSize="12sp"
+            tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 
     <ScrollView
@@ -62,9 +66,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginEnd="25dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="10dp">
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            >
 
             <TextView
                 android:id="@+id/textView4"
@@ -73,18 +77,15 @@
                 android:fontFamily="arial"
                 android:gravity="center"
                 android:text="¡Bienvenido a la App!"
-                android:textColor="@color/black"
-                android:textStyle="bold"
+                android:textColor="@color/app_init"
                 android:textSize="25dp"
-                />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
 
-                android:layout_marginEnd="30dp"
                 android:fontFamily="arial"
                 android:gravity="center"
                 android:text="Realiza tus compras en línea de manera rápida, cómoda y segura."
@@ -94,11 +95,11 @@
                 android:textSize="14sp"
                 android:textStyle="normal" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="70dp"
-                android:background="@drawable/logo_e_verde"
-                android:layout_marginTop="15dp"/>
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dashboard" />
 
         </LinearLayout>
 
@@ -106,8 +107,7 @@
 
     </ScrollView>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+
+
 
 </LinearLayout>
