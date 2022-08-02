@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityConfirmacionPedidos">
+
+
+    <LinearLayout
+        android:id="@id/numCompras"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@drawable/fondo0"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        tools:ignore="MissingConstraints">
+
+
+        <ImageView
+            android:id="@+id/imgvSalir"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/ic_action_name"
+            android:gravity="center"
+            android:onClick="onClickRegresar"
+            tools:ignore="OnClick,SpeakableTextPresentCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
+
+        <TextView
+            android:id="@+id/dash"
+            android:layout_width="223dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:text="Finalizar la Compra"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="normal" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="485dp"
+
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="23dp"
+        android:orientation="vertical"
+        android:padding="100dp">
+
+
+        <TextView
+            android:id="@+id/ide"
+            android:layout_width="255dp"
+            android:layout_height="52dp"
+            android:drawableLeft="@android:drawable/ic_menu_camera"
+            android:hint="Identificacion"
+            android:padding="10dp"
+            android:textSize="20dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/correo"
+            android:layout_width="254dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@android:drawable/ic_dialog_email"
+            android:hint="Correo:"
+            android:padding="5dp"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="254dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@android:drawable/ic_menu_myplaces"
+            android:hint="Usuario:"
+            android:inputType="date"
+            android:padding="5dp"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="254dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@android:drawable/ic_menu_call"
+            android:hint="Telefono:"
+            android:padding="5dp"
+            android:textSize="15dp" />
+
+
+        <Button
+            android:id="@+id/ubi"
+            android:layout_width="159dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@android:drawable/ic_menu_mylocation"
+            android:text="Ubicacion" />
+
+        <Button
+            android:id="@+id/ce"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@android:drawable/btn_dialog"
+            android:text="cerrar">
+
+        </Button>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

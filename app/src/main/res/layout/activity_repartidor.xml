@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".ActivityRepartidor">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_margin="0dp"
+        android:background="@drawable/fondo0"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+
+        <ImageView
+            android:id="@+id/imgvSalir"
+            android:layout_width="45dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/ic_action_name"
+            android:gravity="center"
+
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/dash"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:text="@string/el_econ_mico"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="normal" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewRepar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
+        android:text="Bienvenido: "
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnLIniciar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_rounded"
+        android:fontFamily="sans-serif-light"
+        android:text="Perfil Usuario"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnLIniciar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_rounded"
+        android:fontFamily="sans-serif-light"
+        android:text="Cerrar Sesion"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewRepar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Lista de Pedidos "
+        android:textColor="@color/black"
+        android:textColorHint="@android:color/black"
+        android:textSize="20sp" />
+
+    <ListView
+        android:id="@+id/listaPedidosNR"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
