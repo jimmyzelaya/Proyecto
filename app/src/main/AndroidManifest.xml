@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Proyecto.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityPedidos"
+            android:exported="false" />
+        <activity
             android:name=".ActivityRepartidor"
             android:exported="false" />
         <activity
