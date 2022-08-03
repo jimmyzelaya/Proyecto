@@ -3,8 +3,8 @@ package com.grupo5.proyecto.Configurations.ApiConfigurations;
 public class ApiConfigurations {
     // Server address
     private static final String Server_http      = "http://";
-    private static final String Server_direction = "api-el-economico.atwebpages.com/api/";
-//    private static final String Server_direction = "api-el-economico.000webhostapp.com/api/";
+//    private static final String Server_direction = "api-el-economico.atwebpages.com/api/";
+    private static final String Server_direction = "api-el-economico.000webhostapp.com/api/";
 
     /**
      *  Addresses
