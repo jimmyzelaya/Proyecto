@@ -9,13 +9,10 @@
     tools:context=".ActivityDashboardAdmin">
 
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:orientation="vertical"
-        android:background="@color/app_init"
+        android:background="@color/aplication_color"
         android:padding="10dp">
-
 
         <ImageView
             android:id="@+id/imgvSalir"
@@ -24,35 +21,26 @@
             android:background="@drawable/ic_action_name"
             android:gravity="center" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:background="@color/teal_200"
-        android:padding="10dp">
-
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/txtbuscar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:layout_weight="1"
-            android:background="@color/white"
-            android:backgroundTint="@color/white"
+            android:background="@color/app_init"
             android:elevation="1dp"
             android:ems="10"
             android:fontFamily="arial"
-            android:hint="¿Qué estas buscando?"
+            android:hint="¿Qué desea comprar hoy?"
             android:inputType="textPersonName"
             android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHighlight="@color/black"
-            android:textColorHint="@color/cardview_dark_background"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:textColorLink="@color/black"
             android:textCursorDrawable="@color/app_init"
-            android:textSize="12sp"
+            android:textSize="16sp"
+            tools:fontFamily="@font/rubik_regular"
             tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 
@@ -73,7 +61,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="arial"
+                android:fontFamily="@font/rubik_regular"
                 android:gravity="center"
                 android:text="¡Bienvenido a la App!"
                 android:textColor="@color/app_init"
@@ -85,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:fontFamily="arial"
+                android:fontFamily="@font/rubik_regular"
                 android:gravity="center"
                 android:text="Realiza tus compras en línea de manera rápida, cómoda y segura."
                 android:textColor="@color/black"
@@ -102,7 +90,8 @@
                 android:text="Dashboard"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:fontFamily="@font/rubik_regular" />
 
             <GridLayout
                 android:layout_width="match_parent"
@@ -247,7 +236,6 @@
                             android:id="@+id/btnInfo"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:onClick="onClickInfo"
                             app:srcCompat="@drawable/ubicacion"
                             tools:ignore="UsingOnClickInXml" />
 
