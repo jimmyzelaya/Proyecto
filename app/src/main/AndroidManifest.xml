@@ -19,6 +19,9 @@
             android:name=".ActivityTienda"
             android:exported="false" />
         <activity
+            android:name=".ActivityListadoPedidos"
+            android:exported="false" />
+        <activity
             android:name=".ActivityPedidos"
             android:exported="false" />
         <activity

@@ -4,19 +4,19 @@
     <string name="el_econ_mico" translatable="false">El Económico</string>
     <!--Login y Registrarse-->
     <string name="registro" translatable="false">Registro</string>
-    <string name="nombre" translatable="false">NOMBRES:</string>
-    <string name="apellido" translatable="false">APELLIDOS:</string>
-    <string name="correo_electronico" translatable="false">CORREO ELECTRÓNICO:</string>
-    <string name="passwd" translatable="false">CONTRASEÑA:</string>
-    <string name="telefono" translatable="false">TELÉFONO:</string>
-    <string name="direccion" translatable="false">DIRECCIÓN:</string>
+    <string name="nombre" translatable="false">Nombre:</string>
+    <string name="apellido" translatable="false">Apellido:</string>
+    <string name="correo_electronico" translatable="false">Correo Electrónico:</string>
+    <string name="passwd" translatable="false">Contraseña:</string>
+    <string name="telefono" translatable="false">Teléfono:</string>
+    <string name="direccion" translatable="false">Dirección:</string>
+    <string name="registrarse" translatable="false">Registrarse</string>
     <string name="Bienvenido" translatable="false">BIENVENIDO</string>
     <string name="iniciar_sesion" translatable="false">Iniciar Sesión</string>
     <string name="no_tienes_cuenta" translatable="false">¿No tienes cuenta?</string>
-    <string name="registrate_aqui" translatable="false">Registrate aqui</string>
-    <string name="registrarse" translatable="false">Registrarse</string>
-    <string name="forgetpass" translatable="false">Olvide mi contraeña</string>
+    <string name="forgetpass" translatable="false">Restablecer contraseña</string>
     <!--Administrador-->
-
+    <string name="perfil_admin" translatable="false">Perfil</string>
+    <string name="login">Login</string>
 
 </resources>
