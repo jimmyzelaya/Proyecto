@@ -31,6 +31,18 @@ public class ApiConfigurations {
     private static final String updateProducts = "products/update.php";
     private static final String deleteProducts = "products/delete.php";
 
+/*
+    // Pedidos
+    private static final String getAllPedidos = "products/get.php";
+    private static final String searchPedidos = "products/search.php";
+    private static final String createPedidos = "products/create.php";
+    private static final String updatePedidos = "products/update.php";
+    private static final String deletePedidos = "products/delete.php";
+*/
+    /**
+
+
+
     /**
      * Endpoints
      */
@@ -55,4 +67,6 @@ public class ApiConfigurations {
     public static final String createProductsEndpoint = Server_http + Server_direction + createProducts;
     public static final String updateProductsEndpoint = Server_http + Server_direction + updateProducts;
     public static final String deleteProductsEndpoint = Server_http + Server_direction + deleteProducts;
+
+
 }

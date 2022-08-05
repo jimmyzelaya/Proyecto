@@ -15,6 +15,7 @@ public class ActivityDashboardAdmin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard_admin);
         Init();
+
         salir.setOnClickListener(this::onClickSalir);
         perfil.setOnClickListener(this::onClickPerfil);
         info.setOnClickListener(this::OnClickInfo);

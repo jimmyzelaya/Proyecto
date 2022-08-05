@@ -18,5 +18,6 @@
     <!--Administrador-->
     <string name="perfil_admin" translatable="false">Perfil</string>
     <string name="login">Login</string>
+    <string name="listado_de_pedido">LISTADO DE PEDIDO</string>
 
 </resources>

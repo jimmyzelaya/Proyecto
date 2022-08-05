@@ -19,6 +19,7 @@ public class ActivityDashboardCliente extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard_cliente);
         Init();
+
         salir.setOnClickListener(this::onClickSalir);
         pedidos.setOnClickListener(this::onClickPedidosActivos);
         tienda.setOnClickListener(this::onClickPedidosTienda);
@@ -35,6 +36,7 @@ public class ActivityDashboardCliente extends AppCompatActivity {
         finish();
     }
     private void onClickPedidosTienda(View view) {
+
 
     }
 
