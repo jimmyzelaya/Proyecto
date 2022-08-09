@@ -36,7 +36,7 @@
                 android:layout_height="match_parent"
                 android:fontFamily="arial"
                 android:gravity="center"
-                android:text="@string/listado_de_pedido"
+                android:text="PEDIDOS ACTIVOS "
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
 

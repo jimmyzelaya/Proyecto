@@ -18,6 +18,13 @@
     <!--Administrador-->
     <string name="perfil_admin" translatable="false">Perfil</string>
     <string name="login">Login</string>
-    <string name="listado_de_pedido">Listado de Pedidos</string>
+    <string name="Bebidas" />
+    <string name="categoria">Categoria</string>
+    <string name="qu_desea_comprar_hoy">¿Qué desea comprar hoy?</string>
+    <string name="categorias">Categorias</string>
+    <string name="categori">Categoria</string>
+    <string name="lacteos">Lacteos</string>
+    <string name="carne">Carne</string>
+    <string name="area_de_bebes">Area de bebes</string>
 
 </resources>

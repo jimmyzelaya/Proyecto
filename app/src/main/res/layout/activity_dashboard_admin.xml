@@ -22,7 +22,7 @@
             android:gravity="center" />
 
         <EditText
-            android:id="@+id/txtbuscar"
+            android:id="@+id/im"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="5dp"
