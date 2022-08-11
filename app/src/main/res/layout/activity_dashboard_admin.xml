@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="wrap_content"
         android:background="@color/aplication_color"
         android:padding="10dp">
 
@@ -22,26 +22,18 @@
             android:gravity="center" />
 
         <EditText
-            android:id="@+id/im"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_weight="1"
-            android:background="@color/app_init"
-            android:elevation="1dp"
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/text_field_background"
+            android:drawableStart="@android:drawable/ic_menu_search"
+            android:drawablePadding="10dp"
             android:ems="10"
-            android:fontFamily="arial"
+            android:textStyle="normal"
+            android:fontFamily="@font/rubik_regular"
             android:hint="¿Qué desea comprar hoy?"
             android:inputType="textPersonName"
-            android:padding="10dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textColorLink="@color/black"
-            android:textCursorDrawable="@color/app_init"
-            android:textSize="16sp"
-            tools:fontFamily="@font/rubik_regular"
-            tools:ignore="TouchTargetSizeCheck" />
+            android:paddingStart="15dp" />
     </LinearLayout>
 
     <ScrollView
@@ -54,6 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -102,8 +95,8 @@
                 android:rowCount="4">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="155dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_margin="12dp"
@@ -111,7 +104,7 @@
                     app:cardElevation="5dp">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="150dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/fondo_blanco"
                         android:gravity="center"
