@@ -80,5 +80,6 @@ public class ApiConfigurations {
     public static final String searchUsersEndpoint = Server_http + Server_direction + searchUsers;
     public static final String updateUsersEndpoint = Server_http + Server_direction + updateUsers;
     public static final String deleteUsersEndpoint = Server_http + Server_direction + deleteUsers;
+    public static final String createUsersEndpoint = Server_http + Server_direction + createUsers;
     public static final String updatePasswordUsersEndpoint = Server_http + Server_direction + updatePasswordUsers;
 }
