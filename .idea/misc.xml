@@ -5,9 +5,11 @@
       <map>
         <entry key="..\:/Users/Jimmy/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_dashboard_cliente.xml" value="0.25" />
         <entry key="..\:/Users/Jimmy/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_forget_pass.xml" value="0.25" />
+        <entry key="..\:/Users/Jimmy/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_info.xml" value="0.25" />
         <entry key="..\:/Users/Jimmy/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/Jimmy/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Jimmy/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_pedidos.xml" value="0.25" />
+        <entry key="..\:/Users/Jimmy/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_perfil_usuario.xml" value="0.25" />
         <entry key="..\:/Users/Jimmy/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_registrar_repartidor.xml" value="0.25" />
         <entry key="..\:/Users/Jimmy/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_registro.xml" value="0.25" />
         <entry key="..\:/Users/Jimmy/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_tienda.xml" value="0.25" />

@@ -19,6 +19,12 @@ public class ActivityDashboardAdmin extends AppCompatActivity {
         salir.setOnClickListener(this::onClickSalir);
         perfil.setOnClickListener(this::onClickPerfil);
         info.setOnClickListener(this::OnClickInfo);
+        tienda.setOnClickListener(this::OnClickTienda);
+    }
+
+    private void OnClickTienda(View view) {
+        Intent tienda = new Intent(getApplicationContext(), ActivityTienda.class);
+        startActivity(tienda);
     }
 
     private void onClickPerfil(View view) {
