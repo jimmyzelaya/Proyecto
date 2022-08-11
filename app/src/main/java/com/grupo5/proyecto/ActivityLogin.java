@@ -28,7 +28,7 @@ import java.util.Map;
 public class ActivityLogin extends AppCompatActivity {
     EditText correo, clave;
     TextView registro, forgetpass;
-    Button iniciarSesion;
+    Button iniciarSesion, btnMenu;
     SQLiteConnections connections;
     RequestQueue queue;
 
@@ -40,7 +40,10 @@ public class ActivityLogin extends AppCompatActivity {
         iniciarSesion.setOnClickListener(this::onClickLogin);
         registro.setOnClickListener(this::onClickRegis);
         forgetpass.setOnClickListener(this::onClickForget);
+
+
     }
+
 
     private void onClickForget(View view) {
         Intent forgotPassword = new Intent(getApplicationContext(),ActivityForgetPass.class);
@@ -48,11 +51,22 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     private void onClickLogin(View view) {
+
 //        if (Utilities.emptyFields(correo)){
   //          if (Utilities.emptyFields(clave)){
                 login();
     //        } else Utilities.message("Debe ingresar su contraseña", getApplicationContext());
       //  } else Utilities.message("Debe ingresar su correo", getApplicationContext());
+
+        /*if (Utilities.emptyFields(correo)){
+            if (Utilities.emptyFields(clave)){
+                login();
+            } else Utilities.message("Debe ingresar su contraseña", getApplicationContext());
+       } else Utilities.message("Debe ingresar su correo", getApplicationContext());  */
+        Intent dashboard = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
+        startActivity(dashboard);
+        finish();
+
     }
 
     private void login() {
@@ -178,4 +192,6 @@ public class ActivityLogin extends AppCompatActivity {
         }
         return response;
     }
+
+
 }

@@ -62,8 +62,10 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/imgTienda"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
+                        android:onClick="onClickTienda"
                         app:srcCompat="@drawable/tienda" />
 
 

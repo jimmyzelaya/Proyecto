@@ -23,6 +23,15 @@
             android:name=".ActivityBebidas"
             android:exported="false" />
         <activity
+            android:name=".ActivityRegistrarUsuario"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".ActivityTienda"
             android:exported="false" />
         <activity
@@ -64,18 +73,16 @@
         <activity android:name=".ActivityForgetPass" />
         <activity
             android:name=".ActivityRegistro"
-            android:exported="false" />
+            android:exported="true">
+
+        </activity>
         <activity
             android:name=".ActivityLogin"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

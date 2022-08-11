@@ -8,6 +8,33 @@
     android:background="#F8F8F8"
     tools:context=".ActivityRegistro">
 
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:background="@drawable/fondo0"
+        android:padding="10dp">
+
+
+        <ImageView
+            android:id="@+id/imgvSalir"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_action_name"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="arial"
+            android:gravity="center"
+            android:text="@string/registro"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,21 +58,10 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="70dp"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginEnd="25dp"
                     android:background="@drawable/logo_e_verde"
-                    android:textColor="#000000" />
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="25dp"
-                    android:background="@drawable/ic_account"
-                    android:textColor="#000000" />
-
-
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginStart="25dp"
+                    android:textColor="#000000"/>
 
             </LinearLayout>
 
@@ -53,55 +69,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/rubik_regular"
-                android:text="@string/correo_electronico"
-                android:textColor="@color/app_init"
-                android:textSize="14sp" />
-
-            <EditText
-                android:id="@+id/txtcorreo"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="5dp"
-                android:background="@color/white"
-                android:elevation="1dp"
-                android:fontFamily="@font/rubik_regular"
-                android:inputType="textEmailAddress"
-                android:paddingStart="10dp"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/rubik_regular"
-                android:text="@string/passwd"
-                android:textColor="@color/app_init"
-                android:textSize="14sp" />
-
-            <EditText
-                android:id="@+id/txtpass"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="5dp"
-                android:background="@color/white"
-                android:elevation="1dp"
-                android:fontFamily="@font/rubik_regular"
-                android:inputType="textPassword"
-                android:paddingStart="10dp"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/rubik_regular"
+                android:fontFamily="arial"
                 android:text="@string/nombre"
-                android:textColor="@color/app_init"
+                android:textColor="#000000"
                 android:textSize="14sp" />
 
             <EditText
@@ -112,7 +82,7 @@
                 android:background="@color/white"
                 android:elevation="1dp"
                 android:ems="10"
-                android:fontFamily="@font/rubik_regular"
+                android:fontFamily="arial"
                 android:inputType="text"
                 android:paddingStart="10dp"
                 android:textColor="#000000"
@@ -124,9 +94,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/rubik_regular"
+                android:fontFamily="arial"
                 android:text="@string/apellido"
-                android:textColor="@color/app_init"
+                android:textColor="#000000"
                 android:textSize="14sp" />
 
             <EditText
@@ -136,7 +106,7 @@
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
                 android:elevation="1dp"
-                android:fontFamily="@font/rubik_regular"
+                android:fontFamily="arial"
                 android:inputType="text"
                 android:paddingStart="10dp"
                 android:textColor="#000000"
@@ -147,25 +117,70 @@
                 android:textSize="14sp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:fontFamily="arial"
+                android:text="@string/correo_electronico"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/txtcorreo"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:elevation="1dp"
+                android:fontFamily="arial"
+                android:inputType="textEmailAddress"
+                android:paddingStart="10dp"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/rubik_regular"
-                android:text="@string/telefono"
-                android:textColor="@color/app_init"
+                android:fontFamily="arial"
+                android:text="@string/passwd"
+                android:textColor="#000000"
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/editTextPhone"
+                android:id="@+id/txtpass"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:elevation="1dp"
+                android:fontFamily="arial"
+                android:inputType="textPassword"
+                android:paddingStart="10dp"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:fontFamily="arial"
+                android:text="@string/telefono"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/txttelefono"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
                 android:elevation="1dp"
                 android:ems="10"
-                android:fontFamily="@font/rubik_regular"
+                android:fontFamily="arial"
                 android:inputType="phone"
                 android:paddingStart="10dp"
                 android:textColor="#000000"
@@ -176,9 +191,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/rubik_regular"
+                android:fontFamily="arial"
                 android:text="@string/direccion"
-                android:textColor="@color/app_init"
+                android:textColor="#000000"
                 android:textSize="14sp" />
 
             <EditText
@@ -188,7 +203,7 @@
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
                 android:elevation="1dp"
-                android:fontFamily="@font/rubik_regular"
+                android:fontFamily="arial"
                 android:inputType="text"
                 android:paddingStart="10dp"
                 android:textColor="#000000"
@@ -209,11 +224,11 @@
                 android:fontFamily="arial"
                 android:text="@string/registrarse"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"/>
+                android:layout_height="200dp"/>
 
         </LinearLayout>
 

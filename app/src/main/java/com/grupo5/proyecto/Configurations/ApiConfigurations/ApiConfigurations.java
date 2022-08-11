@@ -3,8 +3,8 @@ package com.grupo5.proyecto.Configurations.ApiConfigurations;
 public class ApiConfigurations {
     // Server address
     private static final String Server_http      = "http://";
-//    private static final String Server_direction = "api-el-economico.atwebpages.com/api/";
-    private static final String Server_direction = "api-el-economico.000webhostapp.com/api/";
+    private static final String Server_direction = "api-el-economico.atwebpages.com/api/";
+//    private static final String Server_direction = "api-el-economico.000webhostapp.com/api/";
 
     /**
      *  Addresses
@@ -53,6 +53,7 @@ public class ApiConfigurations {
     public static final String logoutEndpoint         = Server_http + Server_direction + logout;
     public static final String resetPasswordEndpoint  = Server_http + Server_direction + resetPassword;
     public static final String newPasswordEndpoint    = Server_http + Server_direction + newPassword;
+    public static final String verifyEndpoint         = Server_http + Server_direction + verify;
 
     // Categories
     public static final String getAllCategoriesEndpoint = Server_http + Server_direction + getAllCategories;

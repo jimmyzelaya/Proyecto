@@ -16,6 +16,8 @@ public class ActivityRegistro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
+
+
     }
 
 
