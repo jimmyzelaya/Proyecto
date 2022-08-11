@@ -26,5 +26,10 @@
     <string name="lacteos">Lacteos</string>
     <string name="carne">Carne</string>
     <string name="area_de_bebes">Area de bebes</string>
+    <string name="nueva_contrase_a">Nueva contraseña</string>
+    <string name="ingrese_el_codigo">Ingrese el codigo</string>
+    <string name="ingrese_su_nueva_contrase_a">Ingrese su nueva contraseña</string>
+    <string name="confirmar_contrase_a">Confirmar contraseña</string>
+    <string name="cambiar_contrase_a">Cambiar contraseña</string>
 
 </resources>
