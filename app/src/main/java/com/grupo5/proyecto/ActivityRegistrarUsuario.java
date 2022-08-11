@@ -127,7 +127,9 @@ public void createUser()
         Utilities.message(ex.getMessage(), getApplicationContext());
     }
 }
+/*Este es el que comente chequealoo*/
 /*
+
     private void RegistrarUsuario() {
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         HashMap<String, String> parametros = new HashMap<>();
