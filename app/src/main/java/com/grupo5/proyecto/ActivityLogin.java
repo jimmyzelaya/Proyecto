@@ -71,7 +71,7 @@ public class ActivityLogin extends AppCompatActivity {
                                 JSONArray resp = response.toJSONArray(response.names());
                                 if (resp.length() > 1){
                                     if (saveNewCredentials(resp.getInt(1), resp.getString(2))){  */
-                                        Utilities.message("Inicio de sesión exitoso", getApplicationContext());
+                                        Utilities.message("Bienvenido", getApplicationContext());
                                         Intent dashboard = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
                                         startActivity(dashboard);
                                         finish();
