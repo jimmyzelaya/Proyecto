@@ -17,6 +17,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
             android:name=".ActivityNewPassword"
             android:exported="false" />
         <activity
@@ -24,8 +27,7 @@
             android:exported="false" />
         <activity
             android:name=".ActivityRegistrarUsuario"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".ActivityTienda"
             android:exported="false" />
@@ -68,9 +70,7 @@
         <activity android:name=".ActivityForgetPass" />
         <activity
             android:name=".ActivityRegistro"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".ActivityLogin"
             android:exported="false" />
@@ -83,7 +83,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
