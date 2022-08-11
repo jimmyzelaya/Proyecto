@@ -40,6 +40,8 @@ public class ActivityLogin extends AppCompatActivity {
         iniciarSesion.setOnClickListener(this::onClickLogin);
         registro.setOnClickListener(this::onClickRegis);
         forgetpass.setOnClickListener(this::onClickForget);
+
+
     }
 
     private void onClickForget(View view) {
