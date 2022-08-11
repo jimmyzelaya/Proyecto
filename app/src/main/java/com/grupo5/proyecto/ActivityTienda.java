@@ -14,12 +14,12 @@ public class ActivityTienda extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tienda);
 
-        Init();
-
-        regresarMenu.setOnClickListener(this::onClickSalirMenu);
-        bebidas.setOnClickListener(this::onClickBebidas);
-        lacteos.setOnClickListener(this::OnClickLacteos);
-        carnes.setOnClickListener(this::OnClickCarnes);
+//        Init();
+//
+//        regresarMenu.setOnClickListener(this::onClickSalirMenu);
+//        bebidas.setOnClickListener(this::onClickBebidas);
+//        lacteos.setOnClickListener(this::OnClickLacteos);
+//        carnes.setOnClickListener(this::OnClickCarnes);
     }
 
     private void OnClickCarnes(View view) {
@@ -39,13 +39,6 @@ public class ActivityTienda extends AppCompatActivity {
     }
 
 
-        private void Init()
-        {
-            regresarMenu = findViewById(R.id.imgvSalir);
-            bebidas= findViewById(R.id.btnBebidas);
-            lacteos = findViewById(R.id.btnLacteos);
-            carnes = findViewById(R.id.btncarnes);
-            areaBebes = findViewById(R.id.btnBebes);
-        }
+
 
 }
