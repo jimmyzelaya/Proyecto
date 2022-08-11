@@ -14,8 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_margin="0dp"
-        android:orientation="horizontal"
         android:background="@drawable/fondo0"
+        android:orientation="horizontal"
         android:padding="10dp">
 
 
@@ -43,7 +43,6 @@
 
     </LinearLayout>
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="250dp"
@@ -63,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Ingrese su correo electrónico para verificar"
+            android:text="Ingrese su correo electrónico"
             android:textColor="@color/black"
             android:textSize="14sp"
             tools:fontFamily="@font/rubik_regular"

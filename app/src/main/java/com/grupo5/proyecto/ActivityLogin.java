@@ -100,7 +100,7 @@ public class ActivityLogin extends AppCompatActivity {
         forgetpass = findViewById(R.id.txtforget);
         iniciarSesion = findViewById(R.id.btnLIniciar);
 
-        if (checkIfExistsTokens() != "no"){
+        if (!checkIfExistsTokens().equals("no")){
             loginWithToken(checkIfExistsTokens());
         }
     }
@@ -141,7 +141,7 @@ public class ActivityLogin extends AppCompatActivity {
 
     private boolean saveNewCredentials(int uid, String newToken){
         try {
-            connections = new SQLiteConnections(getApplicationContext(), Transactions.NameDatabase, null, 1);
+            connections = new SQLiteConnections(getApplicationContext(), Transactions.NameDatabase, null, 2);
             SQLiteDatabase db = connections.getWritableDatabase();
             ContentValues value = new ContentValues();
             Cursor cursor = db.rawQuery(Transactions.consultCredentials, null);
@@ -164,7 +164,7 @@ public class ActivityLogin extends AppCompatActivity {
     private String checkIfExistsTokens(){
         String response = "no";
         try {
-            connections = new SQLiteConnections(getApplicationContext(), Transactions.NameDatabase, null, 1);
+            connections = new SQLiteConnections(getApplicationContext(), Transactions.NameDatabase, null, 2);
             SQLiteDatabase db = connections.getWritableDatabase();
             Cursor cursor = db.rawQuery(Transactions.consultCredentials, null);
             if (cursor != null) {
