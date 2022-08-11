@@ -20,9 +20,16 @@
         <entry key="..\:/Users/Wilmer Bordas/AndroidStudioProjects/Proyecto/app/src/main/res/drawable-xxhdpi/ic_launcher_ee.xml" value="0.1" />
         <entry key="..\:/Users/Wilmer Bordas/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_dashboard_cliente.xml" value="0.25" />
         <entry key="..\:/Users/Wilmer Bordas/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_forget_pass.xml" value="0.335" />
+        <entry key="..\:/Users/Wilmer Bordas/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_listado_pedidos.xml" value="0.309375" />
         <entry key="..\:/Users/Wilmer Bordas/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_login.xml" value="0.335" />
         <entry key="..\:/Users/Wilmer Bordas/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_main.xml" value="0.309375" />
+        <entry key="..\:/Users/Wilmer Bordas/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_pedidos.xml" value="0.309375" />
+        <entry key="..\:/Users/Wilmer Bordas/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_perfil_admin.xml" value="0.309375" />
+        <entry key="..\:/Users/Wilmer Bordas/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_perfil_repartidor.xml" value="0.309375" />
+        <entry key="..\:/Users/Wilmer Bordas/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_registrar_repartidor.xml" value="0.309375" />
         <entry key="..\:/Users/Wilmer Bordas/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_registro.xml" value="0.25" />
+        <entry key="..\:/Users/Wilmer Bordas/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_repartidor.xml" value="0.309375" />
+        <entry key="..\:/Users/Wilmer Bordas/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_tienda.xml" value="0.309375" />
         <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_bebidas.xml" value="0.25" />
         <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_confirmacion_pedidos.xml" value="0.12158054711246201" />
         <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_dashboard_admin.xml" value="0.1598360655737705" />
