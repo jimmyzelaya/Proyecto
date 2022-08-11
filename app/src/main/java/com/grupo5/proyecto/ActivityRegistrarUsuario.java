@@ -1,10 +1,6 @@
 package com.grupo5.proyecto;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,15 +8,17 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.grupo5.proyecto.Configurations.ApiConfigurations.ApiConfigurations;
 import com.grupo5.proyecto.Configurations.SQLiteConnection.SQLiteConnections;
+import com.grupo5.proyecto.Utilities.Utilities;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -35,7 +33,6 @@ public class ActivityRegistrarUsuario extends AppCompatActivity {
     private EditText phone;
     private EditText address;
     private ImageView profile;
-    private ImageView imgvSalir;
 
     Button btnRegistrarUsuarioRegistrar;
 
@@ -56,7 +53,7 @@ public class ActivityRegistrarUsuario extends AppCompatActivity {
         phone = (EditText) findViewById(R.id.txttelefono);
         address = (EditText) findViewById(R.id.txtdireccion);
         profile = (ImageView) findViewById(R.id.idFotoPerfilAdmin);
-        imgvSalir = (ImageView) findViewById(R.id.imgvSalir);
+        ImageView imgvSalir = (ImageView) findViewById(R.id.imgvSalir);
         btnRegistrarUsuarioRegistrar = (findViewById(R.id.btnRegistrarse));
 
         imgvSalir.setOnClickListener(new View.OnClickListener() {
@@ -91,11 +88,47 @@ public class ActivityRegistrarUsuario extends AppCompatActivity {
         } else if (address.getText().toString().equals("")) {
             Toast.makeText(getApplicationContext(), "Debe de escribir una dirección", Toast.LENGTH_LONG).show();
         } else {
-            RegistrarUsuario();
+            //RegistrarUsuario();
+           createUser();
         }
     }
 
 
+public void createUser()
+{
+    try{
+        queue = Volley.newRequestQueue(getApplicationContext());
+    HashMap<String, String> parameter = new HashMap<>();
+    parameter.put("dni", dni.getText().toString());
+    parameter.put("nombre", names.getText().toString());
+    parameter.put("apellidos", surnames.getText().toString());
+    parameter.put("genero", genre.getText().toString());
+    parameter.put("telefono", phone.getText().toString());
+    parameter.put("direccion", address.getText().toString());
+
+    JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.POST,
+            ApiConfigurations.createUsersEndpoint,
+            new JSONObject(parameter),
+            response -> {
+                if (response.length() > 0) {
+                    try {
+                        JSONArray resp = response.toJSONArray(response.names());
+                        Utilities.message("Se a registrado correctamente.", getApplicationContext());
+                        Intent login = new Intent(getApplicationContext(), ActivityLogin.class);
+                        startActivity(login);
+                        finish();
+                    } catch (JSONException e) {
+                        Utilities.message(e.getMessage(), getApplicationContext());
+                    }
+                }
+            }, error -> Utilities.message(error.getMessage(), getApplicationContext()));
+    queue.add(jsonRequest);
+} catch (Exception ex) {
+        Utilities.message(ex.getMessage(), getApplicationContext());
+    }
+}
+/*Este es el que comente chequealoo*/
+/*
 
     private void RegistrarUsuario() {
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
@@ -133,14 +166,14 @@ public class ActivityRegistrarUsuario extends AppCompatActivity {
         requestQueue.add(jsonObjectRequest);
         limpiar();
     }
-
+*/
     private void limpiar(){
-        dni.setText("");
-        names.setText("");
-        surnames.setText("");
-        genre.setText("");
-        phone.setText("");
-        address.setText("");
+        Utilities.clearFields(dni);
+        Utilities.clearFields(names);
+        Utilities.clearFields(surnames);
+        Utilities.clearFields(genre);
+        Utilities.clearFields(phone);
+        Utilities.clearFields(address);
     }
 
 
