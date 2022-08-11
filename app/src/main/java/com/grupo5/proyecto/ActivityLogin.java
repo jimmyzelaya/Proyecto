@@ -48,15 +48,15 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     private void onClickLogin(View view) {
-        if (Utilities.emptyFields(correo)){
-            if (Utilities.emptyFields(clave)){
+//        if (Utilities.emptyFields(correo)){
+  //          if (Utilities.emptyFields(clave)){
                 login();
-            } else Utilities.message("Debe ingresar su contraseña", getApplicationContext());
-        } else Utilities.message("Debe ingresar su correo", getApplicationContext());
+    //        } else Utilities.message("Debe ingresar su contraseña", getApplicationContext());
+      //  } else Utilities.message("Debe ingresar su correo", getApplicationContext());
     }
 
     private void login() {
-        try {
+      /*  try {
             queue = Volley.newRequestQueue(this);
             HashMap<String, String> parameters = new HashMap<>();
             parameters.put("email", correo.getText().toString());
@@ -70,13 +70,13 @@ public class ActivityLogin extends AppCompatActivity {
                             try {
                                 JSONArray resp = response.toJSONArray(response.names());
                                 if (resp.length() > 1){
-                                    if (saveNewCredentials(resp.getInt(1), resp.getString(2))){
+                                    if (saveNewCredentials(resp.getInt(1), resp.getString(2))){  */
                                         Utilities.message("Inicio de sesión exitoso", getApplicationContext());
                                         Intent dashboard = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
                                         startActivity(dashboard);
                                         finish();
-                                    }
-                                } else Utilities.message(resp.getString(0), getApplicationContext());
+          /*                          }
+                               } else Utilities.message(resp.getString(0), getApplicationContext());
                             } catch (JSONException e) {
                                 Utilities.message(e.getMessage(), getApplicationContext());
                             }
@@ -85,7 +85,7 @@ public class ActivityLogin extends AppCompatActivity {
             queue.add(jsonRequest);
         } catch (Exception ex) {
             Utilities.message(ex.getMessage(), getApplicationContext());
-        }
+        } */
     }
 
     private void onClickRegis(View view) {
