@@ -9,23 +9,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ActivityRegistro extends AppCompatActivity {
-    ImageView login;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
-        init();
-        login.setOnClickListener(this::onClickLog);
+
     }
 
-    private void onClickLog(View view) {
-        Intent login = new Intent(getApplicationContext(), ActivityLogin.class);
-        startActivity(login);
-        finish();
-    }
 
-    private void init(){
-        login = findViewById(R.id.imgvSalir);
-    }
 }
