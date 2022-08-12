@@ -105,7 +105,7 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     private void onClickRegis(View view) {
-        Intent regis = new Intent(getApplicationContext(), DashCliente.class);
+        Intent regis = new Intent(getApplicationContext(), ActivityRegistrarUsuario.class);
         startActivity(regis);
     }
 

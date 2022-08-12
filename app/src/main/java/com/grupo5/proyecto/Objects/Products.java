@@ -74,7 +74,7 @@ public class Products {
         this.precio = precio;
     }
 
-    public byte[] getImagenProducto() {
+    public String getImagenProducto() {
         return imagenProducto;
     }
 

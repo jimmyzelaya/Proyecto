@@ -36,7 +36,7 @@ public class InicioFragment extends Fragment {
     ImageView imgProductos;
     ListView listaProductos;
 
-    private final ArrayList<Products> Listaproductos;
+    //private final ArrayList<Products> Listaproductos;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -60,8 +60,8 @@ public class InicioFragment extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
     public static InicioFragment newInstance(String param1, String param2) {
-        InicioFragment fragment = new InicioFragment(listaproductos);
-        listarProductos();
+       InicioFragment fragment = new InicioFragment();
+        //listarProductos();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -74,7 +74,7 @@ public class InicioFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DashCliente.inflate(getLayoutInflater());
+        //binding = DashCliente.inflate(getLayoutInflater());
 
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -95,54 +95,6 @@ public class InicioFragment extends Fragment {
 
 
 
-    private void listarProductos(String codprod) {
-
-        RequestQueue queue = Volley.newRequestQueue(this);
-        HashMap<String, String> parametros = new HashMap<>();
-        parametros.put("pid",codprod);
-
-
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, ApiConfigurations.getAllProductsEndpoint,
-                new JSONObject(parametros), new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-
-                    JSONArray productoArray = response.getJSONArray("productos");
-
-                    //listaUsuarios.clear();
-                    for (int i = 0; i < productoArray.length(); i++) {
-                        JSONObject RowProductos = productoArray.getJSONObject(i);
-                        producto = new Products(RowProductos.getInt("pid"),
-                                RowProductos.getString("nombre"),
-                                RowProductos.getString("imagen_producto"),
-
-
-                                listaproductos.add(producto);
-                    }
-                    listViewCustomAdapter.setAdapter(adaptador);
-
-                } catch (JSONException ex) {
-                    //Toast.makeText(getApplicationContext(), "No tienes amigos en tu lista", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Error " + error.toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        queue.add(jsonObjectRequest);
-    }
-
-
-    public void init()
-    {
-
-    }
 
 
 

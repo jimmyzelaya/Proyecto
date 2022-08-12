@@ -45,9 +45,10 @@
         <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_registro.xml" value="0.15760869565217392" />
         <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_repartidor.xml" value="0.15760869565217392" />
         <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_tienda.xml" value="0.15760869565217392" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/fragment_inicio.xml" value="0.15760869565217392" />
+        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/fragment_inicio.xml" value="0.264" />
         <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/item_list_screenProducto.xml" value="0.4" />
         <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/item_list_screenproduct.xml" value="0.4" />
+        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/productos.xml" value="0.25" />
       </map>
     </option>
   </component>
