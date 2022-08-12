@@ -69,4 +69,5 @@ public class ApiConfigurations {
     public static final String deleteProductsEndpoint = Server_http + Server_direction + deleteProducts;
 
 
+    public static String createUsersEndpoint;
 }
