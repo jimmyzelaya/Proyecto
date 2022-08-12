@@ -13,24 +13,27 @@ import android.widget.EditText;
 import android.widget.TextView;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.grupo5.proyecto.Configurations.ApiConfigurations.ApiConfigurations;
 import com.grupo5.proyecto.Configurations.SQLiteConnection.SQLiteConnections;
 import com.grupo5.proyecto.Configurations.SQLiteConnection.Transactions;
+import com.grupo5.proyecto.Objects.Users;
 import com.grupo5.proyecto.Utilities.Utilities;
-import com.grupo5.proyecto.databinding.ActivityDashClienteBinding;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ActivityLogin extends AppCompatActivity {
     EditText correo, clave;
     TextView registro, forgetpass;
-    Button iniciarSesion, btnMenu;
+    Button iniciarSesion;
     SQLiteConnections connections;
     RequestQueue queue;
 
@@ -42,10 +45,7 @@ public class ActivityLogin extends AppCompatActivity {
         iniciarSesion.setOnClickListener(this::onClickLogin);
         registro.setOnClickListener(this::onClickRegis);
         forgetpass.setOnClickListener(this::onClickForget);
-
-
     }
-
 
     private void onClickForget(View view) {
         Intent forgotPassword = new Intent(getApplicationContext(),ActivityForgetPass.class);
@@ -58,17 +58,6 @@ public class ActivityLogin extends AppCompatActivity {
                 login();
             } else Utilities.message("Debe ingresar su contraseña", getApplicationContext());
         } else Utilities.message("Debe ingresar su correo", getApplicationContext());
-
-
-        if (Utilities.emptyFields(correo)){
-            if (Utilities.emptyFields(clave)){
-                login();
-            } else Utilities.message("Debe ingresar su contraseña", getApplicationContext());
-       } else Utilities.message("Debe ingresar su correo", getApplicationContext());
-        //Intent dashboard = new Intent(getApplicationContext(), DashCliente.class);
-        //startActivity(dashboard);
-        //finish();
-
     }
 
     private void login() {
@@ -87,12 +76,12 @@ public class ActivityLogin extends AppCompatActivity {
                                 JSONArray resp = response.toJSONArray(response.names());
                                 if (resp.length() > 1){
                                     if (saveNewCredentials(resp.getInt(1), resp.getString(2))){
-                                        Utilities.message("Bienvenido", getApplicationContext());
-                                        Intent dashboard = new Intent(getApplicationContext(), DashCliente.class);
+                                        Utilities.message("Inicio de sesión exitoso", getApplicationContext());
+                                        Intent dashboard = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
                                         startActivity(dashboard);
                                         finish();
                                     }
-                               } else Utilities.message(resp.getString(0), getApplicationContext());
+                                } else Utilities.message(resp.getString(0), getApplicationContext());
                             } catch (JSONException e) {
                                 Utilities.message(e.getMessage(), getApplicationContext());
                             }
@@ -101,7 +90,7 @@ public class ActivityLogin extends AppCompatActivity {
             queue.add(jsonRequest);
         } catch (Exception ex) {
             Utilities.message(ex.getMessage(), getApplicationContext());
-       }
+        }
     }
 
     private void onClickRegis(View view) {
@@ -116,7 +105,7 @@ public class ActivityLogin extends AppCompatActivity {
         forgetpass = findViewById(R.id.txtforget);
         iniciarSesion = findViewById(R.id.btnLIniciar);
 
-        if (!checkIfExistsTokens().equals("no")){
+        if (checkIfExistsTokens() != "no"){
             loginWithToken(checkIfExistsTokens());
         }
     }
@@ -132,23 +121,28 @@ public class ActivityLogin extends AppCompatActivity {
             JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.POST,
                     ApiConfigurations.loginWithTokenEndpoint,
                     new JSONObject(parameters),
-                    response -> {
-                        if (response.length() > 0) {
-                            try {
-                                JSONArray resp = response.toJSONArray(response.names());
-                                if (resp.length() > 1){
-                                    if (saveNewCredentials(resp.getInt(1), resp.getString(2))){
-                                        Utilities.message("Inicio de sesión exitoso", getApplicationContext());
-                                        Intent dashboard = new Intent(getApplicationContext(), DashCliente.class);
-                                        startActivity(dashboard);
-                                        finish();
-                                    }
-                                } else Utilities.message(resp.getString(0), getApplicationContext());
-                            } catch (JSONException e) {
-                                Utilities.message(e.getMessage(), getApplicationContext());
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            if (response.length() > 0) {
+                                try {
+                                    JSONArray resp = response.toJSONArray(response.names());
+                                    if (resp.length() > 1) {
+                                        if (ActivityLogin.this.saveNewCredentials(resp.getInt(1), resp.getString(2))) {
+                                            Utilities.message("Inicio de sesión exitoso", ActivityLogin.this.getApplicationContext());
+                                            Intent dashboard = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
+                                            startActivity(dashboard);
+                                            finish();
+                                        }
+                                    } else
+                                        Utilities.message(resp.getString(0), ActivityLogin.this.getApplicationContext());
+                                } catch (JSONException e) {
+                                    Utilities.message(e.getMessage(), ActivityLogin.this.getApplicationContext());
+                                }
                             }
                         }
-                    }, error -> Utilities.message(error.getMessage(), getApplicationContext()));
+                    },
+                    error -> Utilities.message(error.getMessage(), getApplicationContext()));
             queue.add(jsonRequest);
         } catch (Exception ex) {
             Utilities.message(ex.getMessage(), getApplicationContext());
@@ -194,6 +188,4 @@ public class ActivityLogin extends AppCompatActivity {
         }
         return response;
     }
-
-
 }

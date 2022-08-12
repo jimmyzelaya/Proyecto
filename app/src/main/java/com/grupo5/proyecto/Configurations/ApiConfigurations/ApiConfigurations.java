@@ -1,9 +1,8 @@
 package com.grupo5.proyecto.Configurations.ApiConfigurations;
 
 public class ApiConfigurations {
-    // Server address
-    private static final String Server_http      = "http://";
-    //private static final String Server_direction = "api-el-economico.atwebpages.com/api/";
+    // Server address api-el-economico.atwebpages.com/
+    private static final String Server_http      = "https://";
     private static final String Server_direction = "api-el-economico.000webhostapp.com/api/";
 
     /**
@@ -31,23 +30,13 @@ public class ApiConfigurations {
     private static final String updateProducts = "products/update.php";
     private static final String deleteProducts = "products/delete.php";
 
-    private static final String getAllUser = "users/get.php";
-    private static final String searchUser = "users/search.php";
-    private static final String createUser = "users/create.php";
-    private static final String updateUser = "users/update.php";
-    private static final String deleteUser = "users/delete.php";
-
-/*
-    // Pedidos
-    private static final String getAllPedidos = "products/get.php";
-    private static final String searchPedidos = "products/search.php";
-    private static final String createPedidos = "products/create.php";
-    private static final String updatePedidos = "products/update.php";
-    private static final String deletePedidos = "products/delete.php";
-*/
-    /**
-
-
+    // Users
+    private static final String getAllUsers         = "users/get.php";
+    private static final String searchUsers         = "users/search.php";
+    private static final String createUsers         = "users/create.php";
+    private static final String updateUsers         = "users/update.php";
+    private static final String deleteUsers         = "users/delete.php";
+    private static final String updatePasswordUsers = "users/update_password.php";
 
     /**
      * Endpoints
@@ -59,7 +48,6 @@ public class ApiConfigurations {
     public static final String logoutEndpoint         = Server_http + Server_direction + logout;
     public static final String resetPasswordEndpoint  = Server_http + Server_direction + resetPassword;
     public static final String newPasswordEndpoint    = Server_http + Server_direction + newPassword;
-    public static final String verifyEndpoint         = Server_http + Server_direction + verify;
 
     // Categories
     public static final String getAllCategoriesEndpoint = Server_http + Server_direction + getAllCategories;
@@ -74,12 +62,11 @@ public class ApiConfigurations {
     public static final String updateProductsEndpoint = Server_http + Server_direction + updateProducts;
     public static final String deleteProductsEndpoint = Server_http + Server_direction + deleteProducts;
 
-    public static final String getAllUsersEndpoint = Server_http + Server_direction + getAllProducts;
-    public static final String searchUsersEndpoint = Server_http + Server_direction + searchProducts;
-    public static final String createUsersEndpoint = Server_http + Server_direction + createProducts;
-    public static final String updateUsersEndpoint = Server_http + Server_direction + updateProducts;
-    public static final String deleteUsersEndpoint = Server_http + Server_direction + deleteProducts;
-
-    //public static String createUsersEndpoint;
+    // Users
+    public static final String getAllUsersEndpoint         = Server_http + Server_direction + getAllUsers;
+    public static final String searchUsersEndpoint         = Server_http + Server_direction + searchUsers;
+    public static final String updateUsersEndpoint         = Server_http + Server_direction + updateUsers;
+    public static final String deleteUsersEndpoint         = Server_http + Server_direction + deleteUsers;
+    public static final String createUsersEndpoint         = Server_http + Server_direction + createUsers;
+    public static final String updatePasswordUsersEndpoint = Server_http + Server_direction + updatePasswordUsers;
 }
-

@@ -26,29 +26,6 @@
         <entry key="..\:/Users/Wilmer Bordas/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_login.xml" value="0.335" />
         <entry key="..\:/Users/Wilmer Bordas/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_main.xml" value="0.309375" />
         <entry key="..\:/Users/Wilmer Bordas/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_registro.xml" value="0.25" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_confirmacion_pedidos.xml" value="0.25" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_dash_cliente.xml" value="0.15760869565217392" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_dashboard_admin.xml" value="0.15760869565217392" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_dashboard_administrador.xml" value="0.25" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_dashboard_cliente.xml" value="0.2" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_listado_pedidos.xml" value="0.264" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_listar_productos.xml" value="0.25" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_login.xml" value="0.15760869565217392" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_main2.xml" value="0.15760869565217392" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_new_password.xml" value="0.15760869565217392" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_pedidos.xml" value="0.15760869565217392" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_perfil_admin.xml" value="0.15760869565217392" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_perfil_repartidor.xml" value="0.15760869565217392" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_perfil_usuario.xml" value="0.2" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_registrar_repartidor.xml" value="0.16802536231884058" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_registrar_usuario.xml" value="0.16802536231884058" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_registro.xml" value="0.15760869565217392" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_repartidor.xml" value="0.15760869565217392" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_tienda.xml" value="0.15760869565217392" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/fragment_inicio.xml" value="0.264" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/item_list_screenProducto.xml" value="0.4" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/item_list_screenproduct.xml" value="0.4" />
-        <entry key="..\:/Users/ferna/AndroidStudioProjects/Proyecto/app/src/main/res/layout/productos.xml" value="0.25" />
       </map>
     </option>
   </component>

@@ -66,7 +66,7 @@
                 android:layout_marginTop="10dp"/>
 
             <EditText
-                android:id="@+id/txtnombre"
+                android:id="@+id/txtRNombre"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="5dp"
@@ -85,7 +85,7 @@
                 android:layout_marginTop="10dp"/>
 
             <EditText
-                android:id="@+id/txtapeliido"
+                android:id="@+id/txtRApellido"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="5dp"
@@ -138,7 +138,7 @@
                 android:layout_marginTop="10dp"/>
 
             <EditText
-                android:id="@+id/txttelefono"
+                android:id="@+id/txtRTelefono"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="5dp"
@@ -157,7 +157,7 @@
                 android:layout_marginTop="10dp"/>
 
             <EditText
-                android:id="@+id/txtdireccion"
+                android:id="@+id/txtRDireccion"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="5dp"
@@ -166,7 +166,7 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <Button
-                android:id="@+id/btnRegistrarse"
+                android:id="@+id/btnRRegistrar"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/button_rounded"
