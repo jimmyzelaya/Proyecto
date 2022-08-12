@@ -27,6 +27,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,6 +37,7 @@ public class ActivityLogin extends AppCompatActivity {
     Button iniciarSesion;
     SQLiteConnections connections;
     RequestQueue queue;
+    ArrayList<Users> datoDelUusario = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,9 +79,7 @@ public class ActivityLogin extends AppCompatActivity {
                                 if (resp.length() > 1){
                                     if (saveNewCredentials(resp.getInt(1), resp.getString(2))){
                                         Utilities.message("Inicio de sesión exitoso", getApplicationContext());
-                                        Intent dashboard = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
-                                        startActivity(dashboard);
-                                        finish();
+                                        openActivity(resp.getInt(1));
                                     }
                                 } else Utilities.message(resp.getString(0), getApplicationContext());
                             } catch (JSONException e) {
@@ -121,24 +121,19 @@ public class ActivityLogin extends AppCompatActivity {
             JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.POST,
                     ApiConfigurations.loginWithTokenEndpoint,
                     new JSONObject(parameters),
-                    new Response.Listener<JSONObject>() {
-                        @Override
-                        public void onResponse(JSONObject response) {
-                            if (response.length() > 0) {
-                                try {
-                                    JSONArray resp = response.toJSONArray(response.names());
-                                    if (resp.length() > 1) {
-                                        if (ActivityLogin.this.saveNewCredentials(resp.getInt(1), resp.getString(2))) {
-                                            Utilities.message("Inicio de sesión exitoso", ActivityLogin.this.getApplicationContext());
-                                            Intent dashboard = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
-                                            startActivity(dashboard);
-                                            finish();
-                                        }
-                                    } else
-                                        Utilities.message(resp.getString(0), ActivityLogin.this.getApplicationContext());
-                                } catch (JSONException e) {
-                                    Utilities.message(e.getMessage(), ActivityLogin.this.getApplicationContext());
-                                }
+                    response -> {
+                        if (response.length() > 0) {
+                            try {
+                                JSONArray resp = response.toJSONArray(response.names());
+                                if (resp.length() > 1) {
+                                    if (ActivityLogin.this.saveNewCredentials(resp.getInt(1), resp.getString(2))) {
+                                        Utilities.message("Inicio de sesión exitoso", ActivityLogin.this.getApplicationContext());
+                                        openActivity(resp.getInt(1));
+                                    }
+                                } else
+                                    Utilities.message(resp.getString(0), ActivityLogin.this.getApplicationContext());
+                            } catch (JSONException e) {
+                                Utilities.message(e.getMessage(), ActivityLogin.this.getApplicationContext());
                             }
                         }
                     },
@@ -146,6 +141,54 @@ public class ActivityLogin extends AppCompatActivity {
             queue.add(jsonRequest);
         } catch (Exception ex) {
             Utilities.message(ex.getMessage(), getApplicationContext());
+        }
+    }
+
+    private void openActivity(int uid){
+        queue = Volley.newRequestQueue(getApplicationContext());
+
+        JsonObjectRequest objectRequest = new JsonObjectRequest(Request.Method.GET,
+                ApiConfigurations.searchUsersEndpoint + "?uid=" + uid,
+                null,
+                response -> {
+                    if (response.length() > 0) {
+                        try {
+                            JSONArray resp = response.toJSONArray(response.names());
+                            Users datos = new Users(resp.getString(0), resp.getString(1), resp.getString(2), resp.getString(3), resp.getString(4),
+                                    resp.getString(5), resp.getString(6), resp.getString(7), resp.getString(8), resp.getString(9), resp.getString(10),
+                                    resp.getString(11), resp.getString(12));
+                            datoDelUusario.add(datos);
+                        } catch (JSONException e) {
+                            Utilities.message(e.getMessage(), ActivityLogin.this.getApplicationContext());
+                        }
+                    }
+                },
+                error -> Utilities.message(error.getMessage(), getApplicationContext()));
+        queue.add(objectRequest);
+
+        if (datoDelUusario.size() > 0) {
+            if (datoDelUusario.get(0).getRol().equals("Administrador")) {
+                Intent dashboard = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("Objeto", datoDelUusario);
+                dashboard.putExtras(bundle);
+                startActivity(dashboard);
+                finish();
+            } else if (datoDelUusario.get(0).getRol().equals("Cliente")) {
+                Intent dashboard = new Intent(getApplicationContext(), DashCliente.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("Objeto", datoDelUusario);
+                dashboard.putExtras(bundle);
+                startActivity(dashboard);
+                finish();
+            } else {
+                Intent dashboard = new Intent(getApplicationContext(), ActivityRepartidor.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("Objeto", datoDelUusario);
+                dashboard.putExtras(bundle);
+                startActivity(dashboard);
+                finish();
+            }
         }
     }
 
