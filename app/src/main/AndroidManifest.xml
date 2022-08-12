@@ -68,8 +68,7 @@
         <activity android:name=".ActivityForgetPass" />
         <activity
             android:name=".ActivityRegistro"
-            android:exported="true">
-        </activity>
+            android:exported="false"/>
         <activity
             android:name=".ActivityLogin"
             android:exported="false" />
