@@ -53,21 +53,21 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     private void onClickLogin(View view) {
-
         if (Utilities.emptyFields(correo)){
             if (Utilities.emptyFields(clave)){
                 login();
             } else Utilities.message("Debe ingresar su contraseña", getApplicationContext());
         } else Utilities.message("Debe ingresar su correo", getApplicationContext());
 
+
         if (Utilities.emptyFields(correo)){
             if (Utilities.emptyFields(clave)){
                 login();
             } else Utilities.message("Debe ingresar su contraseña", getApplicationContext());
        } else Utilities.message("Debe ingresar su correo", getApplicationContext());
-        Intent dashboard = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
-        startActivity(dashboard);
-        finish();
+        //Intent dashboard = new Intent(getApplicationContext(), DashCliente.class);
+        //startActivity(dashboard);
+        //finish();
 
     }
 
@@ -88,7 +88,7 @@ public class ActivityLogin extends AppCompatActivity {
                                 if (resp.length() > 1){
                                     if (saveNewCredentials(resp.getInt(1), resp.getString(2))){
                                         Utilities.message("Bienvenido", getApplicationContext());
-                                        Intent dashboard = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
+                                        Intent dashboard = new Intent(getApplicationContext(), DashCliente.class);
                                         startActivity(dashboard);
                                         finish();
                                     }
@@ -105,7 +105,7 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     private void onClickRegis(View view) {
-        Intent regis = new Intent(getApplicationContext(), ActivityRegistro.class);
+        Intent regis = new Intent(getApplicationContext(), DashCliente.class);
         startActivity(regis);
     }
 
@@ -139,7 +139,7 @@ public class ActivityLogin extends AppCompatActivity {
                                 if (resp.length() > 1){
                                     if (saveNewCredentials(resp.getInt(1), resp.getString(2))){
                                         Utilities.message("Inicio de sesión exitoso", getApplicationContext());
-                                        Intent dashboard = new Intent(getApplicationContext(), ActivityDashClienteBinding.class);
+                                        Intent dashboard = new Intent(getApplicationContext(), DashCliente.class);
                                         startActivity(dashboard);
                                         finish();
                                     }
