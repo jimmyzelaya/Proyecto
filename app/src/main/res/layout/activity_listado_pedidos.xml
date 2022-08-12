@@ -36,7 +36,7 @@
                 android:layout_height="match_parent"
                 android:fontFamily="arial"
                 android:gravity="center"
-                android:text="Listado"
+                android:text="Listado Productos "
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
 

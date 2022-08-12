@@ -14,6 +14,7 @@ public class ActivityTienda extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tienda);
 
+
 //        Init();
 //
 //        regresarMenu.setOnClickListener(this::onClickSalirMenu);

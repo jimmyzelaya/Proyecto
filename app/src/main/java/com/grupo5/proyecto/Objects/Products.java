@@ -1,19 +1,20 @@
 package com.grupo5.proyecto.Objects;
 
 public class Products {
+
+
     private String pid;
     private String nombre;
     private String descripcion;
     private int idCategoria;
     private String categoria;
     private double precio;
-    private String imagenProducto;
+    private byte[] imagenProducto;
     private int cantidad;
-
-    public Products() {
+    public Products(String pid, String nombre, String imagen_producto) {
     }
 
-    public Products(String pid, String nombre, String descripcion, int idCategoria, String categoria, double precio, String imagenProducto, int cantidad) {
+    public Products(String pid, String nombre, String descripcion, int idCategoria, String categoria, double precio, byte[] imagenProducto, int cantidad) {
         this.pid = pid;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -27,6 +28,7 @@ public class Products {
     public String getPid() {
         return pid;
     }
+
 
     public void setPid(String pid) {
         this.pid = pid;
@@ -76,7 +78,7 @@ public class Products {
         return imagenProducto;
     }
 
-    public void setImagenProducto(String imagenProducto) {
+    public void setImagenProducto(byte[] imagenProducto) {
         this.imagenProducto = imagenProducto;
     }
 
@@ -87,4 +89,6 @@ public class Products {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+
+
 }

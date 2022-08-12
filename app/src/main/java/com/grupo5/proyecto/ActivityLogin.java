@@ -13,26 +13,31 @@ import android.widget.EditText;
 import android.widget.TextView;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.grupo5.proyecto.Configurations.ApiConfigurations.ApiConfigurations;
 import com.grupo5.proyecto.Configurations.SQLiteConnection.SQLiteConnections;
 import com.grupo5.proyecto.Configurations.SQLiteConnection.Transactions;
+import com.grupo5.proyecto.Objects.Users;
 import com.grupo5.proyecto.Utilities.Utilities;
-import com.grupo5.proyecto.databinding.ActivityDashClienteBinding;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ActivityLogin extends AppCompatActivity {
     EditText correo, clave;
     TextView registro, forgetpass;
-    Button iniciarSesion, btnMenu;
+    Button iniciarSesion;
     SQLiteConnections connections;
     RequestQueue queue;
+    ArrayList<Users> datoDelUusario = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +47,7 @@ public class ActivityLogin extends AppCompatActivity {
         iniciarSesion.setOnClickListener(this::onClickLogin);
         registro.setOnClickListener(this::onClickRegis);
         forgetpass.setOnClickListener(this::onClickForget);
-
-
     }
-
 
     private void onClickForget(View view) {
         Intent forgotPassword = new Intent(getApplicationContext(),ActivityForgetPass.class);
@@ -53,22 +55,11 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     private void onClickLogin(View view) {
-
         if (Utilities.emptyFields(correo)){
             if (Utilities.emptyFields(clave)){
                 login();
             } else Utilities.message("Debe ingresar su contraseña", getApplicationContext());
         } else Utilities.message("Debe ingresar su correo", getApplicationContext());
-
-        if (Utilities.emptyFields(correo)){
-            if (Utilities.emptyFields(clave)){
-                login();
-            } else Utilities.message("Debe ingresar su contraseña", getApplicationContext());
-       } else Utilities.message("Debe ingresar su correo", getApplicationContext());
-        Intent dashboard = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
-        startActivity(dashboard);
-        finish();
-
     }
 
     private void login() {
@@ -87,12 +78,10 @@ public class ActivityLogin extends AppCompatActivity {
                                 JSONArray resp = response.toJSONArray(response.names());
                                 if (resp.length() > 1){
                                     if (saveNewCredentials(resp.getInt(1), resp.getString(2))){
-                                        Utilities.message("Bienvenido", getApplicationContext());
-                                        Intent dashboard = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
-                                        startActivity(dashboard);
-                                        finish();
+                                        Utilities.message("Inicio de sesión exitoso", getApplicationContext());
+                                        openActivity(resp.getInt(1));
                                     }
-                               } else Utilities.message(resp.getString(0), getApplicationContext());
+                                } else Utilities.message(resp.getString(0), getApplicationContext());
                             } catch (JSONException e) {
                                 Utilities.message(e.getMessage(), getApplicationContext());
                             }
@@ -101,11 +90,11 @@ public class ActivityLogin extends AppCompatActivity {
             queue.add(jsonRequest);
         } catch (Exception ex) {
             Utilities.message(ex.getMessage(), getApplicationContext());
-       }
+        }
     }
 
     private void onClickRegis(View view) {
-        Intent regis = new Intent(getApplicationContext(), ActivityRegistro.class);
+        Intent regis = new Intent(getApplicationContext(), ActivityRegistrarUsuario.class);
         startActivity(regis);
     }
 
@@ -116,7 +105,7 @@ public class ActivityLogin extends AppCompatActivity {
         forgetpass = findViewById(R.id.txtforget);
         iniciarSesion = findViewById(R.id.btnLIniciar);
 
-        if (!checkIfExistsTokens().equals("no")){
+        if (checkIfExistsTokens() != "no"){
             loginWithToken(checkIfExistsTokens());
         }
     }
@@ -136,22 +125,70 @@ public class ActivityLogin extends AppCompatActivity {
                         if (response.length() > 0) {
                             try {
                                 JSONArray resp = response.toJSONArray(response.names());
-                                if (resp.length() > 1){
-                                    if (saveNewCredentials(resp.getInt(1), resp.getString(2))){
-                                        Utilities.message("Inicio de sesión exitoso", getApplicationContext());
-                                        Intent dashboard = new Intent(getApplicationContext(), ActivityDashClienteBinding.class);
-                                        startActivity(dashboard);
-                                        finish();
+                                if (resp.length() > 1) {
+                                    if (ActivityLogin.this.saveNewCredentials(resp.getInt(1), resp.getString(2))) {
+                                        Utilities.message("Inicio de sesión exitoso", ActivityLogin.this.getApplicationContext());
+                                        openActivity(resp.getInt(1));
                                     }
-                                } else Utilities.message(resp.getString(0), getApplicationContext());
+                                } else
+                                    Utilities.message(resp.getString(0), ActivityLogin.this.getApplicationContext());
                             } catch (JSONException e) {
-                                Utilities.message(e.getMessage(), getApplicationContext());
+                                Utilities.message(e.getMessage(), ActivityLogin.this.getApplicationContext());
                             }
                         }
-                    }, error -> Utilities.message(error.getMessage(), getApplicationContext()));
+                    },
+                    error -> Utilities.message(error.getMessage(), getApplicationContext()));
             queue.add(jsonRequest);
         } catch (Exception ex) {
             Utilities.message(ex.getMessage(), getApplicationContext());
+        }
+    }
+
+    private void openActivity(int uid){
+        queue = Volley.newRequestQueue(getApplicationContext());
+
+        JsonObjectRequest objectRequest = new JsonObjectRequest(Request.Method.GET,
+                ApiConfigurations.searchUsersEndpoint + "?uid=" + uid,
+                null,
+                response -> {
+                    if (response.length() > 0) {
+                        try {
+                            JSONArray resp = response.toJSONArray(response.names());
+                            Users datos = new Users(resp.getString(0), resp.getString(1), resp.getString(2), resp.getString(3), resp.getString(4),
+                                    resp.getString(5), resp.getString(6), resp.getString(7), resp.getString(8), resp.getString(9), resp.getString(10),
+                                    resp.getString(11), resp.getString(12));
+                            datoDelUusario.add(datos);
+                        } catch (JSONException e) {
+                            Utilities.message(e.getMessage(), ActivityLogin.this.getApplicationContext());
+                        }
+                    }
+                },
+                error -> Utilities.message(error.getMessage(), getApplicationContext()));
+        queue.add(objectRequest);
+
+        if (datoDelUusario.size() > 0) {
+            if (datoDelUusario.get(0).getRol().equals("Administrador")) {
+                Intent dashboard = new Intent(getApplicationContext(), ActivityDashboardAdmin.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("Objeto", datoDelUusario);
+                dashboard.putExtras(bundle);
+                startActivity(dashboard);
+                finish();
+            } else if (datoDelUusario.get(0).getRol().equals("Cliente")) {
+                Intent dashboard = new Intent(getApplicationContext(), DashCliente.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("Objeto", datoDelUusario);
+                dashboard.putExtras(bundle);
+                startActivity(dashboard);
+                finish();
+            } else {
+                Intent dashboard = new Intent(getApplicationContext(), ActivityRepartidor.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("Objeto", datoDelUusario);
+                dashboard.putExtras(bundle);
+                startActivity(dashboard);
+                finish();
+            }
         }
     }
 
@@ -194,6 +231,4 @@ public class ActivityLogin extends AppCompatActivity {
         }
         return response;
     }
-
-
 }

@@ -12,7 +12,7 @@ public class Utilities {
     }
 
     public static boolean emptyFields(EditText field){
-        return field.getText().toString().length() > 1;
+        return field.getText().toString().length() > 0;
     }
 
     public static boolean validateEmail(String email){

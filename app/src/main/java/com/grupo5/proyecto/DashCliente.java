@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.grupo5.proyecto.databinding.ActivityDashClienteBinding;
@@ -24,7 +25,9 @@ public class DashCliente extends AppCompatActivity {
 
             switch (item.getItemId()){
                 case R.id.inicio:
-                    replaceFragment(new InicioFragment());
+                    /*replaceFragment(new InicioFragment(listaproductos));*/
+                    Intent ListFruta = new Intent(getApplicationContext(), ActivityListarProductos.class);
+                    startActivity(ListFruta );
                     break;
                 case R.id.info:
                     replaceFragment(new InfoFragment());

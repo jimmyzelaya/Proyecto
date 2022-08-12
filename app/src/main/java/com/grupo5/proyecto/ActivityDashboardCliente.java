@@ -23,7 +23,7 @@ public class ActivityDashboardCliente extends AppCompatActivity {
     private void onClickSalir(View view) {
         Intent logout = new Intent(getApplicationContext(), ActivityLogin.class);
         startActivity(logout);
-        finish();
+        //finish();
     }
 
     private void Init() {
