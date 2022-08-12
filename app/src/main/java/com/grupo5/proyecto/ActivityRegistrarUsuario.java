@@ -115,7 +115,7 @@ public class ActivityRegistrarUsuario extends AppCompatActivity {
                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
                 byte[] byteArray = outputStream.toByteArray();
-                imgUser = Base64.encodeToString(byteArray, Base64.URL_SAFE);
+                imgUser = Base64.encodeToString(byteArray, Base64.DEFAULT);
             } catch (IOException e) {
                 e.printStackTrace();
             }

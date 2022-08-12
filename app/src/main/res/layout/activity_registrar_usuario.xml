@@ -144,25 +144,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:text="Id:"
-                android:textColor="#000000"
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/txtid"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="5dp"
-                android:backgroundTint="@color/cardview_shadow_start_color"
-                android:ems="10"
-                android:importantForAutofill="no"
-                android:textColor="#000000"
-                tools:ignore="LabelFor,SpeakableTextPresentCheck" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
                 android:text="@string/nombre"
                 android:textColor="#000000"
                 android:textSize="16sp" />
@@ -196,45 +177,6 @@
                 android:inputType="textPersonName"
                 android:textColor="#000000"
                 tools:ignore="SpeakableTextPresentCheck" />
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:text="Correo:"
-                android:textColor="#000000"
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/txtcorreo"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="5dp"
-                android:backgroundTint="@color/cardview_shadow_start_color"
-                android:ems="10"
-                android:importantForAutofill="no"
-                android:textColor="#000000"
-                tools:ignore="LabelFor,SpeakableTextPresentCheck" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:text="Contraseña"
-                android:textColor="#000000"
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/txtcontraseña"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="5dp"
-                android:backgroundTint="@color/cardview_shadow_start_color"
-                android:ems="10"
-                android:importantForAutofill="no"
-                android:textColor="#000000"
-                tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
 
             <TextView
@@ -309,23 +251,6 @@
                 android:singleLine="true"
                 tools:ignore="SpeakableTextPresentCheck" />
 
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:text="Verificacion de Token:"
-                android:textColor="#000000"
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/txtverificaciontoken"
-                android:layout_width="match_parent"
-                android:layout_height="57dp"
-                android:layout_marginTop="5dp"
-                android:backgroundTint="@color/cardview_shadow_start_color"
-                android:textColor="#000000"
-                tools:ignore="SpeakableTextPresentCheck" />
 
             <Button
                 android:id="@+id/btnRRegistrar"
