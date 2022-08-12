@@ -3,8 +3,8 @@ package com.grupo5.proyecto.Configurations.ApiConfigurations;
 public class ApiConfigurations {
     // Server address
     private static final String Server_http      = "http://";
-    private static final String Server_direction = "api-el-economico.atwebpages.com/api/";
-//    private static final String Server_direction = "api-el-economico.000webhostapp.com/api/";
+    //private static final String Server_direction = "api-el-economico.atwebpages.com/api/";
+    private static final String Server_direction = "api-el-economico.000webhostapp.com/api/";
 
     /**
      *  Addresses
@@ -30,6 +30,12 @@ public class ApiConfigurations {
     private static final String createProducts = "products/create.php";
     private static final String updateProducts = "products/update.php";
     private static final String deleteProducts = "products/delete.php";
+
+    private static final String getAllUser = "users/get.php";
+    private static final String searchUser = "users/search.php";
+    private static final String createUser = "users/create.php";
+    private static final String updateUser = "users/update.php";
+    private static final String deleteUser = "users/delete.php";
 
 /*
     // Pedidos
@@ -68,6 +74,12 @@ public class ApiConfigurations {
     public static final String updateProductsEndpoint = Server_http + Server_direction + updateProducts;
     public static final String deleteProductsEndpoint = Server_http + Server_direction + deleteProducts;
 
+    public static final String getAllUsersEndpoint = Server_http + Server_direction + getAllProducts;
+    public static final String searchUsersEndpoint = Server_http + Server_direction + searchProducts;
+    public static final String createUsersEndpoint = Server_http + Server_direction + createProducts;
+    public static final String updateUsersEndpoint = Server_http + Server_direction + updateProducts;
+    public static final String deleteUsersEndpoint = Server_http + Server_direction + deleteProducts;
 
-    public static String createUsersEndpoint;
+    //public static String createUsersEndpoint;
 }
+
