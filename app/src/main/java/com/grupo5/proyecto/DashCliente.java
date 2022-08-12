@@ -26,6 +26,9 @@ public class DashCliente extends AppCompatActivity {
                 case R.id.inicio:
                     replaceFragment(new InicioFragment());
                     break;
+                case R.id.info:
+                    replaceFragment(new InfoFragment());
+                    break;
             }
 
 

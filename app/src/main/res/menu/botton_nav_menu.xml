@@ -7,9 +7,9 @@
     <item android:title="Perfil"
         android:icon="@drawable/ic_baseline_person_24"
         android:id="@+id/perfil"/>
-    <item android:title="Cesta"
+    <item android:title="Categorias"
         android:icon="@drawable/ic_baseline_shopping_basket_24"
-        android:id="@+id/cesta"/>
+        android:id="@+id/categorias"/>
     <item android:title="Info"
         android:icon="@drawable/ic_baseline_info_24"
         android:id="@+id/info"/>
