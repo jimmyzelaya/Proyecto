@@ -25,9 +25,9 @@ public class DashCliente extends AppCompatActivity {
 
             switch (item.getItemId()){
                 case R.id.inicio:
-                    /*replaceFragment(new InicioFragment(listaproductos));*/
-                    Intent ListFruta = new Intent(getApplicationContext(), ActivityListarProductos.class);
-                    startActivity(ListFruta );
+                    replaceFragment(new InicioFragment());
+                    //Intent ListFruta = new Intent(getApplicationContext(), ActivityListarProductos.class);
+                    //startActivity(ListFruta );
                     break;
                 case R.id.info:
                     replaceFragment(new InfoFragment());
